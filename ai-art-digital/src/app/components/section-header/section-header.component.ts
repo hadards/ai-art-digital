@@ -1,0 +1,54 @@
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-section-header',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <div [class]="containerClasses">
+      <div *ngIf="badge" class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-4 pulse-glow">
+        <span [innerHTML]="badge"></span>
+      </div>
+
+      <h2 [class]="titleClasses">
+        {{ title }}
+      </h2>
+
+      <p *ngIf="subtitle" [class]="subtitleClasses">
+        {{ subtitle }}
+      </p>
+    </div>
+  `
+})
+export class SectionHeaderComponent {
+  @Input() title = '';
+  @Input() subtitle = '';
+  @Input() badge = '';
+  @Input() centered = true;
+  @Input() size: 'sm' | 'md' | 'lg' = 'md';
+
+  get containerClasses(): string {
+    return this.centered ? 'text-center' : 'text-start';
+  }
+
+  get titleClasses(): string {
+    const sizes = {
+      sm: 'text-2xl md:text-3xl',
+      md: 'text-3xl md:text-4xl lg:text-5xl',
+      lg: 'text-4xl md:text-5xl lg:text-6xl'
+    };
+
+    return `font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-4 leading-tight ${sizes[this.size]}`;
+  }
+
+  get subtitleClasses(): string {
+    const sizes = {
+      sm: 'text-base md:text-lg',
+      md: 'text-lg md:text-xl',
+      lg: 'text-xl md:text-2xl'
+    };
+
+    return `text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl ${sizes[this.size]} ${this.centered ? 'mx-auto' : ''}`;
+  }
+}
