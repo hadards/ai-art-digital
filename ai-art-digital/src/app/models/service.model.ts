@@ -35,6 +35,10 @@ export interface ContentSection {
     title: { he: string; en: string };
     description: { he: string; en: string };
   }>;
+  stats: Array<{
+    value: string;
+    label: { he: string; en: string };
+  }>;
   services: ServiceItem[];
   about: {
     headline: { he: string; en: string };

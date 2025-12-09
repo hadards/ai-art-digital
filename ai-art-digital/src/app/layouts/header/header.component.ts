@@ -106,14 +106,12 @@ export class HeaderComponent {
       he: [
         { label: 'שירותים', anchor: 'services' },
         { label: 'אודותיי', anchor: 'about' },
-        { label: 'תיק עבודות', anchor: 'portfolio' },
-        { label: 'צור קשר', anchor: 'contact' }
+        { label: 'תיק עבודות', anchor: 'portfolio' }
       ],
       en: [
         { label: 'Services', anchor: 'services' },
         { label: 'About', anchor: 'about' },
-        { label: 'Portfolio', anchor: 'portfolio' },
-        { label: 'Contact', anchor: 'contact' }
+        { label: 'Portfolio', anchor: 'portfolio' }
       ]
     });
   }

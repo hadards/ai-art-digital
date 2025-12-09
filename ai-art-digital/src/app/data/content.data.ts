@@ -277,42 +277,67 @@ export const CONTENT_DATA: ContentSection = {
   benefits: [
     {
       title: {
-        he: 'Full-Stack Development',
+        he: 'הנדסת שרשרת אספקה',
+        en: 'Supply Chain Engineering'
+      },
+      description: {
+        he: 'ניסיון בניהול מערכות מורכבות ואופטימיזציה של תהליכים',
+        en: 'Experience managing complex systems and process optimization'
+      }
+    },
+    {
+      title: {
+        he: 'פיתוח Full-Stack',
         en: 'Full-Stack Development'
       },
       description: {
-        he: 'Angular, .NET, Node.js, Python',
-        en: 'Angular, .NET, Node.js, Python'
+        he: 'פיתוח פתרונות מקצה לקצה - מהחזון ועד המוצר הסופי',
+        en: 'End-to-end solutions - from vision to final product'
       }
     },
     {
       title: {
-        he: 'Cloud Architecture',
-        en: 'Cloud Architecture'
-      },
-      description: {
-        he: 'Azure, AWS, מיקרו-שירותים',
-        en: 'Azure, AWS, Microservices'
-      }
-    },
-    {
-      title: {
-        he: 'Enterprise Experience',
-        en: 'Enterprise Experience'
-      },
-      description: {
-        he: 'פיליפס מדיקל, אלביט מערכות',
-        en: 'Philips Medical, Elbit Systems'
-      }
-    },
-    {
-      title: {
-        he: 'Data Analytics',
+        he: 'ניתוח נתונים',
         en: 'Data Analytics'
       },
       description: {
-        he: 'PowerBI, Databricks, SQL Server',
-        en: 'PowerBI, Databricks, SQL Server'
+        he: 'המרת נתונים להחלטות עסקיות מושכלות',
+        en: 'Turning data into smart business decisions'
+      }
+    },
+    {
+      title: {
+        he: 'חשיבה מערכתית',
+        en: 'Systems Thinking'
+      },
+      description: {
+        he: 'יכולת לראות את התמונה הגדולה ולפתור בעיות מורכבות',
+        en: 'Ability to see the big picture and solve complex problems'
+      }
+    }
+  ],
+
+  // Stats for the combined expertise section
+  stats: [
+    {
+      value: '20+',
+      label: {
+        he: 'שנות ניסיון בטכנולוגיה',
+        en: 'Years in Technology'
+      }
+    },
+    {
+      value: 'R&D',
+      label: {
+        he: 'מהנדס שרשרת אספקה',
+        en: 'Supply Chain Engineer'
+      }
+    },
+    {
+      value: '100+',
+      label: {
+        he: 'פרויקטים הושלמו',
+        en: 'Projects Completed'
       }
     }
   ],
