@@ -24,6 +24,29 @@ export interface ServiceItem {
   featured?: boolean;
 }
 
+export interface ArticleItem {
+  id: string;
+  title: {
+    he: string;
+    en: string;
+  };
+  description: {
+    he: string;
+    en: string;
+  };
+  imageUrl: string;
+  link: string;
+  date: string;
+  readTime: {
+    he: string;
+    en: string;
+  };
+  tags: {
+    he: string[];
+    en: string[];
+  };
+}
+
 export interface ContentSection {
   hero: {
     badge: { he: string; en: string };
@@ -54,4 +77,5 @@ export interface ContentSection {
     question: { he: string; en: string };
     answer: { he: string; en: string };
   }>;
+  articles: ArticleItem[];
 }

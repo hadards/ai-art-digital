@@ -7,8 +7,8 @@ import { LanguageService } from '../../language.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="mb-12">
-      <div *ngIf="badge" [class]="'inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-4 pulse-glow ' + (centered ? 'mx-auto' : '')">
+    <div class="mb-12 text-center">
+      <div *ngIf="badge" class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-4 pulse-glow">
         <span [innerHTML]="badge"></span>
       </div>
 
@@ -38,9 +38,7 @@ export class SectionHeaderComponent {
       lg: 'text-4xl md:text-5xl lg:text-6xl'
     };
 
-    const alignment = this.centered ? 'text-center' : (this.languageService.direction() === 'rtl' ? 'text-right' : 'text-left');
-
-    return `font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight ${sizes[this.size]} ${alignment}`;
+    return `font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight whitespace-nowrap overflow-hidden text-ellipsis ${sizes[this.size]}`;
   }
 
   get subtitleClasses(): string {

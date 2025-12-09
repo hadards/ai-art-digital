@@ -12,6 +12,7 @@ import { BenefitsComponent } from './features/benefits/benefits.component';
 import { ServicesComponent } from './features/services/services.component';
 import { AboutComponent } from './features/about/about.component';
 import { PortfolioComponent } from './features/portfolio/portfolio.component';
+import { ArticlesComponent } from './features/articles/articles.component';
 import { ContactComponent } from './features/contact/contact.component';
 
 // Shared Components
@@ -31,6 +32,7 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
     ServicesComponent,
     AboutComponent,
     PortfolioComponent,
+    ArticlesComponent,
     ContactComponent,
     // Shared
     WhatsAppFabComponent
@@ -56,6 +58,9 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
 
         <!-- Portfolio Section -->
         <app-portfolio />
+
+        <!-- Articles Section -->
+        <app-articles />
 
         <!-- Contact Section -->
         <app-contact />

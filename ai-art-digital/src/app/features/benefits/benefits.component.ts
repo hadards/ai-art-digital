@@ -19,8 +19,8 @@ import { CONTENT_DATA } from '../../data/content.data';
       <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
 
         <!-- Section Header -->
-        <div class="mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-center">
+        <div class="mb-16 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
             {{ sectionTitle() }}
           </h2>
           <p [class]="'text-xl text-slate-600 dark:text-slate-300 leading-relaxed ' + (languageService.direction() === 'rtl' ? 'text-right' : 'text-left')">
@@ -29,49 +29,10 @@ import { CONTENT_DATA } from '../../data/content.data';
         </div>
 
         <!-- Main Content Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16 items-stretch">
+        <div class="mb-16">
 
-          <!-- Left: Expertise Cards -->
-          <div [class]="'flex flex-col justify-between ' + (languageService.direction() === 'rtl' ? 'lg:order-2' : '')">
-            <div *ngFor="let benefit of benefits; trackBy: trackByIndex; let i = index"
-                 class="group relative overflow-hidden">
-              <div [class]="'flex items-start gap-3 p-4 rounded-2xl backdrop-blur-sm transition-all duration-500 hover:scale-105 ' + (languageService.direction() === 'rtl' ? 'flex-row-reverse text-right' : '')">
-                <!-- Gradient Background -->
-                <div class="absolute inset-0 bg-gradient-to-br from-white/80 to-slate-50/80 dark:from-slate-800/50 dark:to-slate-900/50 rounded-2xl"></div>
-                <div class="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
-                     [ngClass]="{
-                       'from-primary-500/10 to-purple-500/10 dark:from-violet-500/20 dark:to-purple-500/20': i === 0,
-                       'from-purple-500/10 to-accent-500/10 dark:from-purple-500/20 dark:to-emerald-500/20': i === 1,
-                       'from-accent-500/10 to-pink-500/10 dark:from-emerald-500/20 dark:to-pink-500/20': i === 2,
-                       'from-pink-500/10 to-primary-500/10 dark:from-pink-500/20 dark:to-violet-500/20': i === 3
-                     }"></div>
-
-                <!-- Content -->
-                <div class="relative flex-shrink-0">
-                  <div class="w-9 h-9 rounded-xl shadow-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500"
-                       [ngClass]="{
-                         'bg-gradient-to-br from-primary-500 to-purple-600 dark:from-violet-500 dark:to-purple-600': i === 0,
-                         'bg-gradient-to-br from-purple-500 to-accent-600 dark:from-purple-500 dark:to-emerald-600': i === 1,
-                         'bg-gradient-to-br from-accent-500 to-pink-600 dark:from-emerald-500 dark:to-pink-600': i === 2,
-                         'bg-gradient-to-br from-pink-500 to-primary-600 dark:from-pink-500 dark:to-violet-600': i === 3
-                       }">
-                    <span class="text-base text-white">{{ getIconForBenefit(benefit) }}</span>
-                  </div>
-                </div>
-                <div class="relative flex-1 min-w-0">
-                  <h3 class="text-xs font-bold text-slate-900 dark:text-white mb-1 leading-tight tracking-wide uppercase">
-                    {{ languageService.getTranslation(benefit.title) }}
-                  </h3>
-                  <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {{ languageService.getTranslation(benefit.description) }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Professional Profile -->
-          <div [class]="'lg:col-span-4 relative overflow-hidden rounded-3xl ' + (languageService.direction() === 'rtl' ? 'lg:order-1' : '')">
+          <!-- Professional Profile -->
+          <div class="relative overflow-hidden rounded-3xl max-w-6xl mx-auto">
 
             <!-- Background with mesh gradient -->
             <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-primary-50/50 dark:from-slate-900 dark:via-midnight-900 dark:to-violet-950/30"></div>
@@ -110,35 +71,26 @@ import { CONTENT_DATA } from '../../data/content.data';
               </div>
 
               <!-- Highlights -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-primary-200/50 dark:border-violet-500/20 hover:border-primary-400 dark:hover:border-violet-400 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10 dark:hover:shadow-violet-500/20">
-                  <div class="absolute top-4 left-4 w-12 h-1 bg-gradient-to-r from-primary-500 to-purple-500 dark:from-violet-400 dark:to-purple-400 rounded-full"></div>
-                  <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3 mt-4">
-                    {{ highlight1Title() }}
-                  </h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {{ highlight1() }}
-                  </p>
-                </div>
-
-                <div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-purple-200/50 dark:border-purple-500/20 hover:border-purple-400 dark:hover:border-purple-400 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/20">
-                  <div class="absolute top-4 left-4 w-12 h-1 bg-gradient-to-r from-purple-500 to-accent-500 dark:from-purple-400 dark:to-emerald-400 rounded-full"></div>
-                  <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3 mt-4">
-                    {{ highlight2Title() }}
-                  </h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {{ highlight2() }}
-                  </p>
-                </div>
-
-                <div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-accent-200/50 dark:border-emerald-500/20 hover:border-accent-400 dark:hover:border-emerald-400 transition-all duration-300 hover:shadow-xl hover:shadow-accent-500/10 dark:hover:shadow-emerald-500/20">
-                  <div class="absolute top-4 left-4 w-12 h-1 bg-gradient-to-r from-accent-500 to-primary-500 dark:from-emerald-400 dark:to-violet-400 rounded-full"></div>
-                  <h4 class="text-base font-bold text-slate-900 dark:text-white mb-3 mt-4">
-                    {{ highlight3Title() }}
-                  </h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                    {{ highlight3() }}
-                  </p>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div *ngFor="let benefit of benefits; let i = index"
+                     class="group relative p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-12 h-12 rounded-xl shadow-md flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 mb-3"
+                         [ngClass]="{
+                           'bg-gradient-to-br from-primary-500 to-purple-600 dark:from-violet-500 dark:to-purple-600': i === 0,
+                           'bg-gradient-to-br from-purple-500 to-accent-600 dark:from-purple-500 dark:to-emerald-600': i === 1,
+                           'bg-gradient-to-br from-accent-500 to-pink-600 dark:from-emerald-500 dark:to-pink-600': i === 2,
+                           'bg-gradient-to-br from-pink-500 to-primary-600 dark:from-pink-500 dark:to-violet-600': i === 3
+                         }">
+                      <span class="text-2xl">{{ getIconForBenefit(benefit) }}</span>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2 leading-tight">
+                      {{ languageService.getTranslation(benefit.title) }}
+                    </h4>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {{ languageService.getTranslation(benefit.description) }}
+                    </p>
+                  </div>
                 </div>
               </div>
 

@@ -28,7 +28,7 @@ import { ButtonComponent } from '../../components/button/button.component';
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <!-- AI Badge -->
-        <div class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-8 shadow-lg animate-fade-in pulse-glow">
+        <div *ngIf="languageService.getTranslation(heroContent.badge)" class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-8 shadow-lg animate-fade-in pulse-glow">
           <span [class]="'w-2 h-2 bg-primary-500 dark:bg-violet-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')"></span>
           {{ languageService.getTranslation(heroContent.badge) }}
         </div>
