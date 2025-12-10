@@ -19,7 +19,7 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
             <a href="#" class="flex items-center gap-2 group">
               <img src="/assets/images/logo.png"
                    alt="ARTech Logo"
-                   class="h-8 w-8 object-contain transition-transform group-hover:scale-110" />
+                   class="h-32 w-32 object-contain transition-transform group-hover:scale-110" />
               <span class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-violet-400 transition-colors text-glow">
                 {{ brandName() }}
               </span>

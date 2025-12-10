@@ -145,7 +145,7 @@ export class BenefitsComponent {
 
   sectionSubtitle(): string {
     return this.languageService.getTranslation({
-      he: 'משלב ידע הנדסי ב-R&D עם מיומנויות טכנולוגיות מתקדמות לפתרונות דיגיטליים יוצאי דופן',
+      he: 'משלב ידע הנדסי ב-R&D עם מיומנויות טכנולוגיות מתקדמות לפתרונות דיגיטליים מעוצבים',
       en: 'Combining R&D engineering knowledge with advanced tech skills for exceptional digital solutions'
     });
   }

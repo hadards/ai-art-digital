@@ -47,17 +47,17 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
         <!-- Hero Section -->
         <app-hero />
 
-        <!-- Benefits & Expertise Section -->
-        <app-benefits />
-
-        <!-- Services Section -->
-        <app-services />
-
         <!-- About Section -->
         <app-about />
 
         <!-- Portfolio Section -->
         <app-portfolio />
+
+        <!-- Services Section -->
+        <app-services />
+
+        <!-- Benefits & Expertise Section -->
+        <app-benefits />
 
         <!-- Articles Section -->
         <app-articles />

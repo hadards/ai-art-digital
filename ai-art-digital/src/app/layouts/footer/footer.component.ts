@@ -136,7 +136,7 @@ export class FooterComponent {
 
   brandDescription(): string {
     return this.languageService.getTranslation({
-      he: 'סטודיו עיצוב דיגיטלי מתקדם המשתמש ב-Generative AI, Computer Vision ו-Neural Networks ליצירת עיצובים אומנותיים ודפי נחיתה מתקדמים.',
+      he: 'סטודיו עיצוב דיגיטלי מתקדם המשתמש ב-Generative AI ליצירת עיצובים אומנותיים ודפי נחיתה מתקדמים.',
       en: 'Advanced digital design studio using Generative AI, Computer Vision and Neural Networks to create artistic designs and advanced landing pages.'
     });
   }
@@ -154,12 +154,14 @@ export class FooterComponent {
         { label: 'שירותים', anchor: 'services' },
         { label: 'אודותיי', anchor: 'about' },
         { label: 'תיק עבודות', anchor: 'portfolio' },
+        { label: 'מאמרים', anchor: 'articles' },
         { label: 'צור קשר', anchor: 'contact' }
       ],
       en: [
         { label: 'Services', anchor: 'services' },
         { label: 'About', anchor: 'about' },
         { label: 'Portfolio', anchor: 'portfolio' },
+        { label: 'Articles', anchor: 'articles' },
         { label: 'Contact', anchor: 'contact' }
       ]
     });

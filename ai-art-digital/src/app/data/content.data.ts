@@ -216,42 +216,6 @@ export const SERVICES_DATA: ServiceItem[] = [
         'PowerPoint file'
       ]
     }
-  },
-  {
-    id: 'templates',
-    title: {
-      he: 'תבניות חינם + התאמה אישית',
-      en: 'Free Templates + Customization'
-    },
-    description: {
-      he: 'תבניות חינם עם אפשרות להתאמה אישית בתשלום',
-      en: 'Free templates with optional paid customization'
-    },
-    priceRange: {
-      min: 0,
-      max: 800,
-      currency: '₪'
-    },
-    deliveryTime: {
-      he: '1-3 ימים',
-      en: '1-3 days'
-    },
-    includes: {
-      he: [
-        'גישה לתבניות',
-        'הוראות שימוש',
-        'תמיכה בסיסית',
-        'התאמה אישית (בתשלום)',
-        'תיקונים קלים'
-      ],
-      en: [
-        'Access to templates',
-        'Usage instructions',
-        'Basic support',
-        'Custom modifications (paid)',
-        'Minor adjustments'
-      ]
-    }
   }
 ];
 

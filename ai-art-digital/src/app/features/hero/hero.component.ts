@@ -26,11 +26,22 @@ import { ButtonComponent } from '../../components/button/button.component';
 
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
-        <!-- Film strip style image - LARGER -->
+        <!-- Circular image with double ring at top - SMALLER -->
+        <div [class]="'absolute -top-8 w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-2 lg:right-3' : 'left-2 lg:left-3')" style="animation-delay: -9s;">
+          <div class="w-full h-full rounded-full p-2 bg-gradient-to-br from-accent-400 to-primary-500 dark:from-emerald-400 dark:to-violet-500 shadow-2xl">
+            <div class="w-full h-full rounded-full p-1 bg-white dark:bg-slate-800">
+              <div class="w-full h-full rounded-full overflow-hidden">
+                <img src="/assets/images/9.jpg" class="w-full h-full object-cover" alt="Creation">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Film strip style image - TALLER -->
         <div [class]="'absolute top-16 w-56 sm:w-72 lg:w-96 opacity-25 dark:opacity-20 animate-float rotate-3 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -1s;">
           <div class="bg-slate-900 dark:bg-slate-700 p-2 shadow-2xl">
             <div class="border-y-4 border-slate-900 dark:border-slate-600">
-              <div class="aspect-[16/9] overflow-hidden">
+              <div class="aspect-[16/18] overflow-hidden">
                 <img src="/assets/images/1.jpg" class="w-full h-full object-cover" alt="Creation">
               </div>
             </div>

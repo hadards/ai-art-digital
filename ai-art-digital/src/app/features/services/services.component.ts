@@ -17,22 +17,11 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
         <!-- Instagram-style square with gradient border - LARGER -->
-        <div [class]="'absolute top-8 w-60 sm:w-76 lg:w-96 opacity-25 dark:opacity-20 animate-float -rotate-6 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-8' : 'left-8')" style="animation-delay: -3s;">
+        <div [class]="'absolute top-8 w-60 sm:w-76 lg:w-96 opacity-25 dark:opacity-20 animate-float -rotate-6 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -3s;">
           <div class="p-1 bg-gradient-to-br from-primary-500 via-purple-500 to-accent-500 dark:from-violet-500 dark:via-purple-500 dark:to-emerald-500 rounded-2xl shadow-2xl">
             <div class="bg-white dark:bg-slate-900 p-3 rounded-xl">
               <div class="aspect-square overflow-hidden rounded-lg">
                 <img src="/assets/images/7.jpg" class="w-full h-full object-cover" alt="Creation">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Circular image with double ring - LARGER -->
-        <div [class]="'hidden lg:block absolute top-8 w-52 lg:w-68 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-16 lg:right-24' : 'left-16 lg:left-24')" style="animation-delay: -9s;">
-          <div class="w-full h-full rounded-full p-2 bg-gradient-to-br from-accent-400 to-primary-500 dark:from-emerald-400 dark:to-violet-500 shadow-2xl">
-            <div class="w-full h-full rounded-full p-1 bg-white dark:bg-slate-800">
-              <div class="w-full h-full rounded-full overflow-hidden">
-                <img src="/assets/images/9.jpg" class="w-full h-full object-cover" alt="Creation">
               </div>
             </div>
           </div>
@@ -48,28 +37,11 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
           size="lg">
         </app-section-header>
 
-        <!-- Featured Services -->
-        <div *ngIf="featuredServices.length > 0" class="mt-16">
-          <h3 class="text-2xl font-bold text-center text-slate-900 dark:text-slate-100 dark:text-glow mb-8">
-            {{ featuredTitle() }}
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <app-service-card
-              *ngFor="let service of featuredServices; trackBy: trackByServiceId"
-              [service]="service"
-              class="transform transition-all duration-300">
-            </app-service-card>
-          </div>
-        </div>
-
         <!-- All Services -->
-        <div>
-          <h3 *ngIf="featuredServices.length > 0" class="text-2xl font-bold text-center text-slate-900 dark:text-slate-100 dark:text-glow mb-8">
-            {{ allServicesTitle() }}
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="mt-16">
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             <app-service-card
-              *ngFor="let service of regularServices; trackBy: trackByServiceId"
+              *ngFor="let service of services; trackBy: trackByServiceId"
               [service]="service"
               class="transform transition-all duration-300">
             </app-service-card>
