@@ -27,7 +27,7 @@ export interface SiteConfig {
 
 export const SITE_CONFIG: SiteConfig = {
   // Display Options
-  showPricing: true,
+  showPricing: false,
   showAboutMe: true,
   showPortfolio: true,
   showTestimonials: false,

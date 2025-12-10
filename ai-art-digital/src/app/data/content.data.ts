@@ -230,8 +230,8 @@ export const CONTENT_DATA: ContentSection = {
       en: 'ARTech - Advanced Digital Designs'
     },
     subheadline: {
-      he: 'Full-Stack Development • Cloud Architecture • Data Analytics • דפי נחיתה מותאמים',
-      en: 'Full-Stack Development • Cloud Architecture • Data Analytics • Custom Landing Pages'
+      he: 'עיצובים אומנותיים • דפי נחיתה מותאמים',
+      en: 'Artistic Designs • Custom Landing Pages'
     },
     cta: {
       he: 'צור קשר',
@@ -241,8 +241,8 @@ export const CONTENT_DATA: ContentSection = {
   benefits: [
     {
       title: {
-        he: 'הנדסת שרשרת אספקה',
-        en: 'Supply Chain Engineering'
+        he: 'אסטרטגיות בשרשרת אספקה',
+        en: 'Supply Chain Data Strategy'
       },
       description: {
         he: 'ניסיון בניהול מערכות מורכבות ואופטימיזציה של תהליכים',
@@ -251,7 +251,7 @@ export const CONTENT_DATA: ContentSection = {
     },
     {
       title: {
-        he: 'פיתוח Full-Stack',
+        he: 'פיתוח תוכנה Full-Stack',
         en: 'Full-Stack Development'
       },
       description: {
@@ -271,12 +271,12 @@ export const CONTENT_DATA: ContentSection = {
     },
     {
       title: {
-        he: 'חשיבה מערכתית',
-        en: 'Systems Thinking'
+        he: 'אוטומציות וסוכני AI',
+        en: 'Automations & AI Agents'
       },
       description: {
-        he: 'יכולת לראות את התמונה הגדולה ולפתור בעיות מורכבות',
-        en: 'Ability to see the big picture and solve complex problems'
+        he: 'פיתוח סוכני AI מותאמים לשיפור תהליכים',
+        en: 'Developing custom AI agents to enhance processes'
       }
     }
   ],
@@ -293,12 +293,12 @@ export const CONTENT_DATA: ContentSection = {
     {
       value: 'R&D',
       label: {
-        he: 'מהנדס שרשרת אספקה',
-        en: 'Supply Chain Engineer'
+        he: 'מהנדסת תוכנה ומובילה טכנולוגית',
+        en: 'Software & Data Lead'
       }
     },
     {
-      value: '100+',
+      value: '50+',
       label: {
         he: 'פרויקטים הושלמו',
         en: 'Projects Completed'
@@ -314,39 +314,35 @@ export const CONTENT_DATA: ContentSection = {
     bio: {
       he: 'Senior Software & Data Leader בפיליפס מדיקל עם 20+ שנות ניסיון בהייטק. אני מביאה מומחיות טכנית מעולם פיתוח התוכנה Enterprise לעולם העיצוב הדיגיטלי. מנסיון בהנעת צוותי פיתוח רב-תחומיים ופיתוח אפליקציות מורכבות, אני יוצרת פתרונות דיגיטליים מתקדמים שמבוססים על טכנולוגיה אמינה.',
       en: 'Senior Software & Data Leader at Philips Medical with 20+ years of high-tech experience. I bring technical expertise from Enterprise software development to digital design. From leading cross-functional development teams and building complex applications, I create advanced digital solutions based on reliable technology.'
-    },
-    credentials: {
-      he: 'פיליפס מדיקל: Data Tech & Quality Lead | אלביט מערכות: FullStack Team Lead לשעבר',
-      en: 'Philips Medical: Data Tech & Quality Lead | Former Elbit Systems: FullStack Team Lead'
     }
   },
   process: [
     {
       step: 1,
       title: {
-        he: 'צור קשר בוואטסאפ',
+        he: 'צרו קשר בוואטסאפ',
         en: 'Contact on WhatsApp'
       },
       description: {
-        he: 'לחץ על הכפתור ושלח לי הודעה',
+        he: 'לחצו על הכפתור ושלחו לי הודעה',
         en: 'Click the button and send me a message'
       }
     },
     {
       step: 2,
       title: {
-        he: 'שתף פרטים',
+        he: 'שתפו פרטים',
         en: 'Share Details'
       },
       description: {
-        he: 'ספר לי מה אתה צריך, שלח קבצים',
+        he: 'ספרו לי מה אתם צריכים, שלחו קבצים',
         en: 'Tell me what you need, send files'
       }
     },
     {
       step: 3,
       title: {
-        he: 'קבל הצעת מחיר',
+        he: 'קבלו הצעת מחיר',
         en: 'Get Quote'
       },
       description: {
@@ -357,7 +353,7 @@ export const CONTENT_DATA: ContentSection = {
     {
       step: 4,
       title: {
-        he: 'אני יוצר',
+        he: 'אני יוצרת',
         en: 'I Create'
       },
       description: {
@@ -368,7 +364,7 @@ export const CONTENT_DATA: ContentSection = {
     {
       step: 5,
       title: {
-        he: 'קבל את התוצר',
+        he: 'קבלו את התוצר',
         en: 'Receive Product'
       },
       description: {

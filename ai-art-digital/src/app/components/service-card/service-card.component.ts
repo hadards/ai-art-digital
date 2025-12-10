@@ -12,7 +12,7 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
   template: `
     <div class="group bg-white dark:bg-gradient-to-br dark:from-midnight-800/80 dark:to-midnight-700/60 rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-violet-500/10 transition-all duration-300 hover:transform hover:-translate-y-1 overflow-hidden border border-slate-100 dark:border-violet-500/20 gradient-card-dark pulse-glow">
       <!-- Featured Badge -->
-      <div *ngIf="service.featured" class="absolute top-4 right-4 z-10">
+      <div *ngIf="service.featured" [class]="'absolute top-4 z-10 ' + (languageService.direction() === 'rtl' ? 'left-4' : 'right-4')">
         <span class="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-violet-500 dark:to-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse pulse-glow">
           {{ languageService.getTranslation({ he: 'מומלץ', en: 'Featured' }) }}
         </span>
@@ -60,7 +60,7 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
 
         <!-- Simple CTA Text -->
         <div class="mt-auto">
-          <div class="text-center py-3 glass rounded-xl border border-slate-200 dark:border-violet-500/30 hover:bg-slate-100 dark:hover:bg-violet-500/10 transition-colors pulse-glow">
+          <div class="flex items-center justify-center py-3 glass rounded-xl border border-slate-200 dark:border-violet-500/30 hover:bg-slate-100 dark:hover:bg-violet-500/10 transition-colors pulse-glow">
             <span class="text-slate-600 dark:text-slate-300 text-sm font-medium">
               {{ availableText() }}
             </span>

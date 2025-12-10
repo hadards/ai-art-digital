@@ -89,15 +89,7 @@ import { CONTENT_DATA } from '../../data/content.data';
                 <div *ngFor="let benefit of benefits; let i = index"
                      class="group relative p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div class="flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-xl shadow-md flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 mb-3"
-                         [ngClass]="{
-                           'bg-gradient-to-br from-primary-500 to-purple-600 dark:from-violet-500 dark:to-purple-600': i === 0,
-                           'bg-gradient-to-br from-purple-500 to-accent-600 dark:from-purple-500 dark:to-emerald-600': i === 1,
-                           'bg-gradient-to-br from-accent-500 to-pink-600 dark:from-emerald-500 dark:to-pink-600': i === 2,
-                           'bg-gradient-to-br from-pink-500 to-primary-600 dark:from-pink-500 dark:to-violet-600': i === 3
-                         }">
-                      <span class="text-2xl">{{ getIconForBenefit(benefit) }}</span>
-                    </div>
+                    <img [src]="getIconForBenefit(benefit)" [alt]="languageService.getTranslation(benefit.title)" class="w-20 h-20 object-contain mb-3 transform group-hover:scale-110 transition-transform duration-300" />
                     <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2 leading-tight">
                       {{ languageService.getTranslation(benefit.title) }}
                     </h4>
@@ -113,16 +105,18 @@ import { CONTENT_DATA } from '../../data/content.data';
         </div>
 
         <!-- Stats Row -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div *ngFor="let stat of stats; trackBy: trackByIndex"
-               class="text-center p-6 glass border border-slate-200/50 dark:border-violet-500/20 rounded-2xl
-                      hover:shadow-lg transition-all duration-300 group">
-            <div class="text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-violet-400 dark:to-emerald-400
-                        bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform">
-              {{ stat.value }}
-            </div>
-            <div class="text-sm text-slate-600 dark:text-slate-400 font-medium">
-              {{ languageService.getTranslation(stat.label) }}
+        <div class="flex justify-center">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
+            <div *ngFor="let stat of stats; trackBy: trackByIndex"
+                 class="flex flex-col items-center justify-center text-center p-6 glass border border-slate-200/50 dark:border-violet-500/20 rounded-2xl
+                        hover:shadow-lg transition-all duration-300 group">
+              <div class="text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-violet-400 dark:to-emerald-400
+                          bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform text-center">
+                {{ stat.value }}
+              </div>
+              <div class="text-sm text-slate-600 dark:text-slate-400 font-medium text-center">
+                {{ languageService.getTranslation(stat.label) }}
+              </div>
             </div>
           </div>
         </div>
@@ -225,13 +219,13 @@ export class BenefitsComponent {
     const titleHe = benefit.title.he;
 
     const icons: Record<string, string> = {
-      'הנדסת שרשרת אספקה': '⚙️',
-      'פיתוח Full-Stack': '💻',
-      'ניתוח נתונים': '📊',
-      'חשיבה מערכתית': '🧠'
+      'אסטרטגיות בשרשרת אספקה': '/assets/icons/IMG_8877-removebg-preview.png',
+      'פיתוח תוכנה Full-Stack': '/assets/icons/IMG_8880-removebg-preview.png',
+      'ניתוח נתונים': '/assets/icons/IMG_8891-removebg-preview.png',
+      'אוטומציות וסוכני AI': '/assets/icons/IMG_8889-removebg-preview.png'
     };
 
-    return icons[titleHe] || '⭐';
+    return icons[titleHe] || '/assets/icons/IMG_8877-removebg-preview.png';
   }
 
   trackByIndex(index: number): number {

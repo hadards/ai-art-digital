@@ -11,7 +11,7 @@ import { ButtonComponent } from '../../components/button/button.component';
   standalone: true,
   imports: [CommonModule, ButtonComponent],
   template: `
-    <section class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/50 dark:to-midnight-900 overflow-hidden">
+    <section class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/50 dark:to-midnight-900 overflow-hidden">
 
       <!-- Background Elements -->
       <div class="absolute inset-0 overflow-hidden z-0">
@@ -26,15 +26,9 @@ import { ButtonComponent } from '../../components/button/button.component';
 
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
-        <!-- Circular image with double ring at top - SMALLER -->
-        <div [class]="'absolute -top-8 w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-2 lg:right-3' : 'left-2 lg:left-3')" style="animation-delay: -9s;">
-          <div class="w-full h-full rounded-full p-2 bg-gradient-to-br from-accent-400 to-primary-500 dark:from-emerald-400 dark:to-violet-500 shadow-2xl">
-            <div class="w-full h-full rounded-full p-1 bg-white dark:bg-slate-800">
-              <div class="w-full h-full rounded-full overflow-hidden">
-                <img src="/assets/images/9.jpg" class="w-full h-full object-cover" alt="Creation">
-              </div>
-            </div>
-          </div>
+        <!-- Hadar bike image -->
+        <div [class]="'absolute top-32 w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-24 lg:right-32' : 'left-24 lg:left-32')" style="animation-delay: -9s;">
+          <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover" alt="Hadar on bike">
         </div>
 
         <!-- Film strip style image - TALLER -->
@@ -48,14 +42,6 @@ import { ButtonComponent } from '../../components/button/button.component';
           </div>
         </div>
 
-        <!-- Torn paper effect portrait - LARGER -->
-        <div [class]="'absolute bottom-20 w-48 sm:w-60 lg:w-72 opacity-25 dark:opacity-20 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-8' : 'left-8')" style="animation-delay: -4s;">
-          <div class="relative bg-white dark:bg-slate-200 p-4 shadow-2xl" style="clip-path: polygon(0% 2%, 3% 0%, 7% 1%, 10% 0%, 15% 2%, 18% 0%, 22% 1%, 27% 0%, 30% 2%, 35% 1%, 38% 0%, 42% 2%, 47% 0%, 50% 1%, 55% 0%, 58% 2%, 62% 1%, 67% 0%, 70% 2%, 75% 1%, 78% 0%, 82% 2%, 87% 0%, 90% 1%, 95% 0%, 98% 2%, 100% 0%, 100% 98%, 98% 100%, 95% 99%, 90% 100%, 87% 98%, 82% 100%, 78% 99%, 75% 100%, 70% 98%, 67% 100%, 62% 99%, 58% 100%, 55% 98%, 50% 100%, 47% 99%, 42% 100%, 38% 98%, 35% 100%, 30% 99%, 27% 100%, 22% 98%, 18% 100%, 15% 99%, 10% 100%, 7% 98%, 3% 100%, 0% 98%);">
-            <div class="aspect-[3/4] overflow-hidden">
-              <img src="/assets/images/2.png" class="w-full h-full object-cover sepia dark:sepia-0" alt="Creation">
-            </div>
-          </div>
-        </div>
 
       </div>
 
@@ -68,8 +54,10 @@ import { ButtonComponent } from '../../components/button/button.component';
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight animate-slide-up">
-          {{ languageService.getTranslation(heroContent.headline) }}
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 mb-6 leading-tight animate-slide-up tracking-tight" style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 15px rgba(139, 92, 246, 0.3));">
+          <span class="bg-gradient-to-r from-primary-600 via-purple-600 to-accent-600 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent">
+            {{ languageService.getTranslation(heroContent.headline) }}
+          </span>
         </h1>
 
         <!-- Subheadline -->
@@ -88,21 +76,6 @@ import { ButtonComponent } from '../../components/button/button.component';
           </app-button>
         </div>
 
-        <!-- Technology Stack Indicators -->
-        <div class="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-slate-500 dark:text-slate-400 animate-fade-in" style="animation-delay: 0.6s;">
-          <div class="flex items-center glass px-3 py-2 rounded-full pulse-glow">
-            <span [class]="'text-2xl ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')">💻</span>
-            <span class="text-sm">{{ fullStackText() }}</span>
-          </div>
-          <div class="flex items-center glass px-3 py-2 rounded-full pulse-glow">
-            <span [class]="'text-2xl ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')">☁️</span>
-            <span class="text-sm">{{ cloudArchitectureText() }}</span>
-          </div>
-          <div class="flex items-center glass px-3 py-2 rounded-full pulse-glow">
-            <span [class]="'text-2xl ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')">📊</span>
-            <span class="text-sm">{{ dataAnalyticsText() }}</span>
-          </div>
-        </div>
       </div>
     </section>
   `
@@ -140,24 +113,4 @@ export class HeroComponent {
     });
   }
 
-  fullStackText(): string {
-    return this.languageService.getTranslation({
-      he: 'Full-Stack Development',
-      en: 'Full-Stack Development'
-    });
-  }
-
-  cloudArchitectureText(): string {
-    return this.languageService.getTranslation({
-      he: 'Cloud Architecture',
-      en: 'Cloud Architecture'
-    });
-  }
-
-  dataAnalyticsText(): string {
-    return this.languageService.getTranslation({
-      he: 'Data Analytics',
-      en: 'Data Analytics'
-    });
-  }
 }

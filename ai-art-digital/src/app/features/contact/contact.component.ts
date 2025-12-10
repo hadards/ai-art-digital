@@ -28,7 +28,7 @@ import { ButtonComponent } from '../../components/button/button.component';
             <div class="absolute -top-3 right-1/4 w-20 h-8 bg-amber-100/60 dark:bg-amber-200/40 rotate-6 z-10 shadow-sm"></div>
             <div class="bg-white dark:bg-slate-200 p-4 shadow-2xl">
               <div class="aspect-[16/9] overflow-hidden">
-                <img src="/assets/images/1.jpg" class="w-full h-full object-cover grayscale-[30%] dark:grayscale-0 contrast-110" alt="Creation">
+                <img src="/assets/images/family background.png" class="w-full h-full object-cover grayscale-[30%] dark:grayscale-0 contrast-110" alt="Creation">
               </div>
             </div>
           </div>

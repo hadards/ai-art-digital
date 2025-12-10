@@ -29,14 +29,6 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
           </div>
         </div>
 
-        <!-- Octagon-clipped portrait with artistic frame - LARGER -->
-        <div [class]="'hidden lg:block absolute bottom-20 w-48 lg:w-64 aspect-square opacity-22 dark:opacity-18 animate-float rotate-12 hover:rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8 lg:left-16' : 'right-8 lg:right-16')" style="animation-delay: -7s; clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
-          <div class="w-full h-full relative">
-            <img src="/assets/images/4.jpg" class="w-full h-full object-cover hue-rotate-15 dark:hue-rotate-0" alt="Creation">
-            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary-500/20 dark:to-violet-500/20"></div>
-            <div class="absolute inset-0 border-2 border-white/60 dark:border-violet-300/40" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
-          </div>
-        </div>
       </div>
 
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,15 +43,6 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
               [centered]="false"
               size="md">
             </app-section-header>
-
-            <!-- Credentials -->
-            <div *ngIf="aboutContent.credentials" class="mt-4">
-              <div class="bg-gradient-to-r from-primary-50 to-blue-50 rounded-xl p-4 border border-primary-100">
-                <p class="text-primary-800 font-medium text-sm">
-                  {{ languageService.getTranslation(aboutContent.credentials) }}
-                </p>
-              </div>
-            </div>
 
             <!-- Tech Stack -->
             <div class="mt-6">
@@ -81,16 +64,9 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
               <!-- Decorative Background -->
               <div class="absolute inset-0 bg-gradient-to-br from-primary-100 to-accent-100 rounded-3xl transform rotate-6"></div>
 
-              <!-- Profile Image Placeholder -->
+              <!-- Profile Image -->
               <div class="relative bg-slate-200 rounded-3xl overflow-hidden aspect-square shadow-2xl max-w-sm mx-auto">
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="text-center text-slate-500">
-                    <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                    <p class="font-medium">{{ profilePlaceholderText() }}</p>
-                  </div>
-                </div>
+                <img src="/assets/images/profile.jpg" alt="Profile" class="w-full h-full object-cover" />
               </div>
 
               <!-- Floating Elements -->
@@ -137,13 +113,6 @@ export class AboutComponent {
     return this.languageService.getTranslation({
       he: 'זמן מענה: עד 24 שעות',
       en: 'Response time: Up to 24 hours'
-    });
-  }
-
-  profilePlaceholderText(): string {
-    return this.languageService.getTranslation({
-      he: 'הוסף תמונה אישית',
-      en: 'Add Profile Photo'
     });
   }
 

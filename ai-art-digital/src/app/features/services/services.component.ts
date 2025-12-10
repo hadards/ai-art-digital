@@ -92,7 +92,7 @@ export class ServicesComponent {
 
   sectionSubtitle(): string {
     return this.languageService.getTranslation({
-      he: 'פתרונות דיגיטליים מותאמים אישית לכל צורך - מאתרים ועד עיצובים יצירתיים',
+      he: 'פתרונות דיגיטליים מותאמים אישית לכל צורך - מדפי נחיתה ועד עיצובים יצירתיים',
       en: 'Custom digital solutions for every need - from websites to creative designs'
     });
   }
