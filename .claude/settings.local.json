@@ -18,7 +18,8 @@
       "Bash(find:*)",
       "Bash(pkill:*)",
       "Bash(cat:*)",
-      "Bash(npm start)"
+      "Bash(npm start)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []

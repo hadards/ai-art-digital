@@ -348,8 +348,8 @@ export const CONTENT_DATA: ContentSection = {
       en: 'Hi, I\'m Hadar Dashty'
     },
     bio: {
-      he: 'Senior Software & Data Leader בפיליפס מדיקל עם 15+ שנות ניסיון בהייטק. אני מביא מומחיות טכנית מעולם הפיתוח התוכנה Enterprise לעולם העיצוב הדיגיטלי. מנסיון בהנעת צוותי פיתוח רב-תחומיים ופיתוח אפליקציות מורכבות, אני יוצר פתרונות דיגיטליים מתקדמים שמבוססים על טכנולוגיה אמינה.',
-      en: 'Senior Software & Data Leader at Philips Medical with 15+ years of high-tech experience. I bring technical expertise from Enterprise software development to digital design. From leading cross-functional development teams and building complex applications, I create advanced digital solutions based on reliable technology.'
+      he: 'Senior Software & Data Leader בפיליפס מדיקל עם 20+ שנות ניסיון בהייטק. אני מביאה מומחיות טכנית מעולם פיתוח התוכנה Enterprise לעולם העיצוב הדיגיטלי. מנסיון בהנעת צוותי פיתוח רב-תחומיים ופיתוח אפליקציות מורכבות, אני יוצרת פתרונות דיגיטליים מתקדמים שמבוססים על טכנולוגיה אמינה.',
+      en: 'Senior Software & Data Leader at Philips Medical with 20+ years of high-tech experience. I bring technical expertise from Enterprise software development to digital design. From leading cross-functional development teams and building complex applications, I create advanced digital solutions based on reliable technology.'
     },
     credentials: {
       he: 'פיליפס מדיקל: Data Tech & Quality Lead | אלביט מערכות: FullStack Team Lead לשעבר',

@@ -14,9 +14,26 @@ import { ButtonComponent } from '../../components/button/button.component';
     <section id="contact" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-midnight-950 dark:to-midnight-900 text-white relative overflow-hidden">
 
       <!-- Background Elements -->
-      <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden z-0">
         <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-500/20 to-primary-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-full blur-3xl"></div>
+
+        <!-- Floating Images - Your Creations - Artistic Collage Style -->
+
+        <!-- Vintage photo with tape effect - LARGER -->
+        <div [class]="'absolute top-24 w-64 sm:w-80 lg:w-[420px] opacity-25 dark:opacity-20 animate-float rotate-6 hover:rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -2s;">
+          <div class="relative">
+            <!-- Tape strips -->
+            <div class="absolute -top-3 left-1/4 w-20 h-8 bg-amber-100/60 dark:bg-amber-200/40 -rotate-6 z-10 shadow-sm"></div>
+            <div class="absolute -top-3 right-1/4 w-20 h-8 bg-amber-100/60 dark:bg-amber-200/40 rotate-6 z-10 shadow-sm"></div>
+            <div class="bg-white dark:bg-slate-200 p-4 shadow-2xl">
+              <div class="aspect-[16/9] overflow-hidden">
+                <img src="/assets/images/1.jpg" class="w-full h-full object-cover grayscale-[30%] dark:grayscale-0 contrast-110" alt="Creation">
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

@@ -4,16 +4,42 @@ import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
 import { CONTENT_DATA } from '../../data/content.data';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
-import { ButtonComponent } from '../../components/button/button.component';
 import { WhatsAppUtil } from '../../utils/whatsapp.util';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, ButtonComponent],
+  imports: [CommonModule, SectionHeaderComponent],
   template: `
-    <section *ngIf="configService.isFeatureEnabled('showAboutMe')" id="about" class="py-12 bg-white dark:bg-gradient-to-br dark:from-midnight-800 dark:via-midnight-750 dark:to-midnight-700">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section *ngIf="configService.isFeatureEnabled('showAboutMe')" id="about" class="relative py-12 bg-white dark:bg-gradient-to-br dark:from-midnight-800 dark:via-midnight-750 dark:to-midnight-700 overflow-hidden">
+
+      <!-- Background Elements with Floating Images -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <!-- Floating Images - Your Creations - Artistic Collage Style -->
+
+        <!-- Scrapbook-style image with decorative corner - LARGER -->
+        <div [class]="'absolute top-16 w-52 sm:w-68 lg:w-84 opacity-25 dark:opacity-20 animate-float -rotate-6 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-8' : 'left-8')" style="animation-delay: -4s;">
+          <div class="relative bg-gradient-to-br from-primary-50 to-purple-50 dark:from-slate-700 dark:to-slate-600 p-5 shadow-2xl border-l-4 border-t-4 border-primary-400 dark:border-violet-400">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="/assets/images/2.png" class="w-full h-full object-cover" alt="Creation">
+            </div>
+            <!-- Decorative corner pin -->
+            <div [class]="'absolute top-3 w-4 h-4 rounded-full bg-accent-500 dark:bg-emerald-500 shadow-lg ' + (languageService.direction() === 'rtl' ? 'left-3' : 'right-3')"></div>
+            <div [class]="'absolute bottom-3 w-4 h-4 rounded-full bg-primary-500 dark:bg-violet-500 shadow-lg ' + (languageService.direction() === 'rtl' ? 'right-3' : 'left-3')"></div>
+          </div>
+        </div>
+
+        <!-- Octagon-clipped portrait with artistic frame - LARGER -->
+        <div [class]="'hidden lg:block absolute bottom-20 w-48 lg:w-64 aspect-square opacity-22 dark:opacity-18 animate-float rotate-12 hover:rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8 lg:left-16' : 'right-8 lg:right-16')" style="animation-delay: -7s; clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);">
+          <div class="w-full h-full relative">
+            <img src="/assets/images/4.jpg" class="w-full h-full object-cover hue-rotate-15 dark:hue-rotate-0" alt="Creation">
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary-500/20 dark:to-violet-500/20"></div>
+            <div class="absolute inset-0 border-2 border-white/60 dark:border-violet-300/40" style="clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
 

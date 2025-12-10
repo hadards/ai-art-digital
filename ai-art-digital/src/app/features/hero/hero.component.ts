@@ -14,7 +14,7 @@ import { ButtonComponent } from '../../components/button/button.component';
     <section class="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/50 dark:to-midnight-900 overflow-hidden">
 
       <!-- Background Elements -->
-      <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute inset-0 overflow-hidden z-0">
         <!-- Light mode floating elements -->
         <div class="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary-200/30 to-primary-300/20 dark:from-violet-500/20 dark:to-violet-600/10 rounded-full blur-3xl animate-float float-gentle"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-accent-200/30 to-accent-300/20 dark:from-emerald-500/15 dark:to-emerald-600/8 rounded-full blur-3xl animate-float float-gentle" style="animation-delay: -3s;"></div>
@@ -23,6 +23,29 @@ import { ButtonComponent } from '../../components/button/button.component';
         <!-- Additional dark mode artistic elements -->
         <div class="dark:block hidden absolute top-1/4 right-1/4 w-48 h-48 bg-gradient-to-br from-violet-400/10 to-transparent rounded-full blur-2xl pulse-glow" style="animation-delay: -2s;"></div>
         <div class="dark:block hidden absolute bottom-1/3 left-1/4 w-36 h-36 bg-gradient-to-br from-emerald-400/8 to-transparent rounded-full blur-2xl pulse-glow" style="animation-delay: -4s;"></div>
+
+        <!-- Floating Images - Your Creations - Artistic Collage Style -->
+
+        <!-- Film strip style image - LARGER -->
+        <div [class]="'absolute top-16 w-56 sm:w-72 lg:w-96 opacity-25 dark:opacity-20 animate-float rotate-3 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -1s;">
+          <div class="bg-slate-900 dark:bg-slate-700 p-2 shadow-2xl">
+            <div class="border-y-4 border-slate-900 dark:border-slate-600">
+              <div class="aspect-[16/9] overflow-hidden">
+                <img src="/assets/images/1.jpg" class="w-full h-full object-cover" alt="Creation">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Torn paper effect portrait - LARGER -->
+        <div [class]="'absolute bottom-20 w-48 sm:w-60 lg:w-72 opacity-25 dark:opacity-20 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-8' : 'left-8')" style="animation-delay: -4s;">
+          <div class="relative bg-white dark:bg-slate-200 p-4 shadow-2xl" style="clip-path: polygon(0% 2%, 3% 0%, 7% 1%, 10% 0%, 15% 2%, 18% 0%, 22% 1%, 27% 0%, 30% 2%, 35% 1%, 38% 0%, 42% 2%, 47% 0%, 50% 1%, 55% 0%, 58% 2%, 62% 1%, 67% 0%, 70% 2%, 75% 1%, 78% 0%, 82% 2%, 87% 0%, 90% 1%, 95% 0%, 98% 2%, 100% 0%, 100% 98%, 98% 100%, 95% 99%, 90% 100%, 87% 98%, 82% 100%, 78% 99%, 75% 100%, 70% 98%, 67% 100%, 62% 99%, 58% 100%, 55% 98%, 50% 100%, 47% 99%, 42% 100%, 38% 98%, 35% 100%, 30% 99%, 27% 100%, 22% 98%, 18% 100%, 15% 99%, 10% 100%, 7% 98%, 3% 100%, 0% 98%);">
+            <div class="aspect-[3/4] overflow-hidden">
+              <img src="/assets/images/2.png" class="w-full h-full object-cover sepia dark:sepia-0" alt="Creation">
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
