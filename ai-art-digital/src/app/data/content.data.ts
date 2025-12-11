@@ -308,8 +308,8 @@ export const CONTENT_DATA: ContentSection = {
   services: SERVICES_DATA,
   about: {
     headline: {
-      he: 'היי, אני הדר דשתי',
-      en: 'Hi, I\'m Hadar Dashty'
+      he: 'היי, אני הדר ',
+      en: 'Hi, I\'m Hadar'
     },
     bio: {
       he: 'Senior Software & Data Leader בפיליפס מדיקל עם 20+ שנות ניסיון בהייטק. אני מביאה מומחיות טכנית מעולם פיתוח התוכנה Enterprise לעולם העיצוב הדיגיטלי. מנסיון בהנעת צוותי פיתוח רב-תחומיים ופיתוח אפליקציות מורכבות, אני יוצרת פתרונות דיגיטליים מתקדמים שמבוססים על טכנולוגיה אמינה.',

@@ -1,5 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterOutlet, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { ThemeService } from './theme.service';
 
 // Layouts
@@ -24,6 +26,7 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
   standalone: true,
   imports: [
     CommonModule,
+    RouterOutlet,
     // Layouts
     HeaderComponent,
     FooterComponent,
@@ -42,45 +45,47 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
   template: `
     <div class="min-h-screen flex flex-col">
       <!-- Navigation -->
-      <app-header />
+      <app-header *ngIf="isHomePage" />
 
       <!-- Main Content -->
       <main class="flex-grow">
-        <!-- Hero Section -->
-        <app-hero />
+        <!-- Home Page Sections -->
+        <ng-container *ngIf="isHomePage">
+          <app-hero />
+          <app-about />
+          <app-portfolio />
+          <app-resources />
+          <app-services />
+          <app-benefits />
+          <app-articles />
+          <app-contact />
+        </ng-container>
 
-        <!-- About Section -->
-        <app-about />
-
-        <!-- Portfolio Section -->
-        <app-portfolio />
-
-        <!-- Resources Section -->
-        <app-resources />
-
-        <!-- Services Section -->
-        <app-services />
-
-        <!-- Benefits & Expertise Section -->
-        <app-benefits />
-
-        <!-- Articles Section -->
-        <app-articles />
-
-        <!-- Contact Section -->
-        <app-contact />
+        <!-- Routed Pages -->
+        <router-outlet></router-outlet>
       </main>
 
       <!-- Footer -->
       <app-footer />
 
       <!-- WhatsApp FAB -->
-      <app-whatsapp-fab />
+      <app-whatsapp-fab *ngIf="isHomePage" />
     </div>
   `
 })
 export class App {
   title = 'ai-art-digital';
+  isHomePage = true;
 
   private themeService = inject(ThemeService);
+  private router = inject(Router);
+
+  constructor() {
+    // Track route changes to determine if we're on home page
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.isHomePage = event.url === '/' || event.url === '';
+    });
+  }
 }

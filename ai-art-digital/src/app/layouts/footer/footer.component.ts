@@ -102,9 +102,9 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
           </div>
 
           <div class="mt-4 md:mt-0 flex items-center space-x-4 text-slate-600 dark:text-slate-500 text-sm">
-            <a href="#" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ privacyText() }}</a>
+            <a href="/privacy-policy" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ privacyText() }}</a>
             <span>•</span>
-            <a href="#" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ termsText() }}</a>
+            <a href="/terms-of-service" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ termsText() }}</a>
           </div>
         </div>
       </div>
