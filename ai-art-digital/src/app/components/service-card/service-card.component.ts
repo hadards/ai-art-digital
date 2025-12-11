@@ -10,7 +10,7 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="group bg-white dark:bg-gradient-to-br dark:from-midnight-800/80 dark:to-midnight-700/60 rounded-2xl shadow-lg hover:shadow-2xl dark:shadow-violet-500/10 transition-all duration-300 hover:transform hover:-translate-y-1 overflow-hidden border border-slate-100 dark:border-violet-500/20 gradient-card-dark pulse-glow">
+    <div class="group bg-white dark:bg-gradient-to-br dark:from-midnight-800/80 dark:to-midnight-700/60 rounded-2xl shadow-md hover:shadow-xl dark:shadow-violet-500/10 transition-all duration-300 hover:transform hover:-translate-y-1 overflow-hidden border border-slate-200 dark:border-violet-500/20 gradient-card-dark pulse-glow">
       <!-- Featured Badge -->
       <div *ngIf="service.featured" [class]="'absolute top-4 z-10 ' + (languageService.direction() === 'rtl' ? 'left-4' : 'right-4')">
         <span class="bg-gradient-to-r from-primary-500 to-primary-600 dark:from-violet-500 dark:to-violet-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse pulse-glow">
@@ -38,7 +38,7 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
         </div>
 
         <!-- Description -->
-        <p class="text-slate-600 dark:text-slate-300 mb-4 flex-grow leading-relaxed">
+        <p class="text-slate-700 dark:text-slate-300 mb-4 flex-grow leading-relaxed">
           {{ languageService.getTranslation(service.description) }}
         </p>
 
@@ -49,8 +49,8 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
           </h4>
           <ul class="space-y-2">
             <li *ngFor="let item of languageService.getTranslation(service.includes)"
-                class="flex items-start text-sm text-slate-600 dark:text-slate-300">
-              <svg class="w-4 h-4 text-accent-500 dark:text-emerald-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                class="flex items-start text-sm text-slate-700 dark:text-slate-300">
+              <svg class="w-4 h-4 text-accent-600 dark:text-emerald-400 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
               </svg>
               <span>{{ item }}</span>
@@ -60,8 +60,8 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
 
         <!-- Simple CTA Text -->
         <div class="mt-auto">
-          <div class="flex items-center justify-center py-3 glass rounded-xl border border-slate-200 dark:border-violet-500/30 hover:bg-slate-100 dark:hover:bg-violet-500/10 transition-colors pulse-glow">
-            <span class="text-slate-600 dark:text-slate-300 text-sm font-medium">
+          <div class="flex items-center justify-center py-3 glass rounded-xl border border-slate-300 dark:border-violet-500/30 hover:bg-slate-100 dark:hover:bg-violet-500/10 transition-colors pulse-glow">
+            <span class="text-slate-800 dark:text-slate-300 text-sm font-medium">
               {{ availableText() }}
             </span>
           </div>

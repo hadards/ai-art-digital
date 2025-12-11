@@ -27,9 +27,12 @@ import { ButtonComponent } from '../../components/button/button.component';
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
         <!-- Hadar bike image -->
-        <div [class]="'absolute top-32 w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-24 lg:right-32' : 'left-24 lg:left-32')" style="animation-delay: -9s;">
-          <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover" alt="Hadar on bike">
-        </div>
+<div class="absolute" [class]="languageService.direction() === 'rtl' ? 'right-24 lg:right-32' : 'left-24 lg:left-32'" style="top: 240px">
+  <div class="w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700">
+    <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover">
+  </div>
+</div>
+
 
         <!-- Film strip style image - TALLER -->
         <div [class]="'absolute top-16 w-56 sm:w-72 lg:w-96 opacity-25 dark:opacity-20 animate-float rotate-3 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -1s;">
@@ -48,20 +51,20 @@ import { ButtonComponent } from '../../components/button/button.component';
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         <!-- AI Badge -->
-        <div *ngIf="languageService.getTranslation(heroContent.badge)" class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-8 shadow-lg animate-fade-in pulse-glow">
-          <span [class]="'w-2 h-2 bg-primary-500 dark:bg-violet-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')"></span>
+        <div *ngIf="languageService.getTranslation(heroContent.badge)" class="inline-flex items-center px-4 py-2 glass border border-primary-300 dark:border-violet-500/30 text-primary-800 dark:text-violet-200 rounded-full text-sm font-semibold mb-8 shadow-lg animate-fade-in pulse-glow">
+          <span [class]="'w-2 h-2 bg-primary-600 dark:bg-violet-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? 'ml-2' : 'mr-2')"></span>
           {{ languageService.getTranslation(heroContent.badge) }}
         </div>
 
         <!-- Main Headline -->
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 mb-6 leading-tight animate-slide-up tracking-tight" style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 15px rgba(139, 92, 246, 0.3));">
-          <span class="bg-gradient-to-r from-primary-600 via-purple-600 to-accent-600 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-primary-700 via-purple-700 to-accent-700 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent">
             {{ languageService.getTranslation(heroContent.headline) }}
           </span>
         </h1>
 
         <!-- Subheadline -->
-        <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
+        <p class="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 0.2s;">
           {{ languageService.getTranslation(heroContent.subheadline) }}
         </p>
 
@@ -69,9 +72,9 @@ import { ButtonComponent } from '../../components/button/button.component';
         <div class="flex justify-center items-center animate-slide-up" style="animation-delay: 0.4s;">
           <app-button
             variant="outline"
-            size="xl"
+            size="md"
             (clicked)="scrollToServices()"
-            class="btn-artistic">
+            class="btn-artistic md:!px-8 md:!py-4 md:!text-lg">
             {{ learnMoreText() }}
           </app-button>
         </div>

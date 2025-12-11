@@ -11,12 +11,12 @@ import { ButtonComponent } from '../../components/button/button.component';
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent, ButtonComponent],
   template: `
-    <section id="contact" class="py-20 bg-gradient-to-br from-slate-900 to-slate-800 dark:from-midnight-950 dark:to-midnight-900 text-white relative overflow-hidden">
+    <section id="contact" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-midnight-950 dark:to-midnight-900 text-slate-900 dark:text-white relative overflow-hidden">
 
       <!-- Background Elements -->
       <div class="absolute inset-0 overflow-hidden z-0">
-        <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-500/20 to-primary-600/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-accent-500/20 to-accent-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-200/30 to-primary-300/20 dark:from-primary-500/20 dark:to-primary-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-br from-accent-200/30 to-accent-300/20 dark:from-accent-500/20 dark:to-accent-600/10 rounded-full blur-3xl"></div>
 
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
@@ -50,7 +50,7 @@ import { ButtonComponent } from '../../components/button/button.component';
           <div class="max-w-2xl mx-auto">
 
             <!-- Contact Info -->
-            <div class="text-slate-300 mb-12">
+            <div class="text-slate-700 dark:text-slate-300 mb-12">
               <p class="text-lg">{{ responseTimeText() }}</p>
               <p class="text-sm">{{ workingHoursText() }}</p>
             </div>

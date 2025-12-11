@@ -4,6 +4,7 @@ export interface SiteConfig {
   showAboutMe: boolean;
   showPortfolio: boolean;
   showTestimonials: boolean;
+  showResources: boolean;
 
   // Contact
   whatsappNumber: string;
@@ -31,6 +32,7 @@ export const SITE_CONFIG: SiteConfig = {
   showAboutMe: true,
   showPortfolio: true,
   showTestimonials: false,
+  showResources: true,
 
   // Contact
   whatsappNumber: '972522770881',

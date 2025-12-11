@@ -19,7 +19,7 @@ export class ConfigService {
     this.config = { ...this.config, [key]: value };
   }
 
-  isFeatureEnabled(feature: keyof Pick<SiteConfig, 'showPricing' | 'showAboutMe' | 'showPortfolio' | 'showTestimonials' | 'enableDarkMode' | 'enableAnalytics'>): boolean {
+  isFeatureEnabled(feature: keyof Pick<SiteConfig, 'showPricing' | 'showAboutMe' | 'showPortfolio' | 'showTestimonials' | 'showResources' | 'enableDarkMode' | 'enableAnalytics'>): boolean {
     return this.config[feature] as boolean;
   }
 }

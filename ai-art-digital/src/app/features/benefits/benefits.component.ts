@@ -37,7 +37,7 @@ import { CONTENT_DATA } from '../../data/content.data';
           <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
             {{ sectionTitle() }}
           </h2>
-          <p [class]="'text-xl text-slate-600 dark:text-slate-300 leading-relaxed ' + (languageService.direction() === 'rtl' ? 'text-right' : 'text-left')">
+          <p [class]="'text-xl text-slate-800 dark:text-slate-300 leading-relaxed ' + (languageService.direction() === 'rtl' ? 'text-right' : 'text-left')">
             {{ sectionSubtitle() }}
           </p>
         </div>
@@ -72,14 +72,14 @@ import { CONTENT_DATA } from '../../data/content.data';
               </h3>
 
               <!-- Description -->
-              <p class="text-lg text-slate-700 dark:text-slate-200 leading-relaxed mb-8 max-w-4xl">
+              <p class="text-lg text-slate-800 dark:text-slate-200 leading-relaxed mb-8 max-w-4xl">
                 {{ professionalDescription() }}
               </p>
 
               <!-- Quote -->
               <div class="relative mb-12 p-6 rounded-2xl bg-gradient-to-r from-primary-50/50 via-purple-50/50 to-accent-50/50 dark:from-violet-950/30 dark:via-purple-950/30 dark:to-emerald-950/30 border-l-4 border-gradient-to-b from-primary-500 via-purple-500 to-accent-500 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400">
                 <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 via-purple-500 to-accent-500 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 rounded-full"></div>
-                <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed italic font-medium">
+                <p class="text-base text-slate-700 dark:text-slate-300 leading-relaxed italic font-medium">
                   {{ professionalExtended() }}
                 </p>
               </div>
@@ -87,13 +87,13 @@ import { CONTENT_DATA } from '../../data/content.data';
               <!-- Highlights -->
               <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div *ngFor="let benefit of benefits; let i = index"
-                     class="group relative p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                     class="group relative p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div class="flex flex-col items-center text-center">
                     <img [src]="getIconForBenefit(benefit)" [alt]="languageService.getTranslation(benefit.title)" class="w-20 h-20 object-contain mb-3 transform group-hover:scale-110 transition-transform duration-300" />
                     <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2 leading-tight">
                       {{ languageService.getTranslation(benefit.title) }}
                     </h4>
-                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                    <p class="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
                       {{ languageService.getTranslation(benefit.description) }}
                     </p>
                   </div>
@@ -108,13 +108,13 @@ import { CONTENT_DATA } from '../../data/content.data';
         <div class="flex justify-center">
           <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
             <div *ngFor="let stat of stats; trackBy: trackByIndex"
-                 class="flex flex-col items-center justify-center text-center p-6 glass border border-slate-200/50 dark:border-violet-500/20 rounded-2xl
+                 class="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 rounded-2xl
                         hover:shadow-lg transition-all duration-300 group">
-              <div class="text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 dark:from-violet-400 dark:to-emerald-400
+              <div class="text-4xl font-bold bg-gradient-to-r from-primary-700 to-accent-700 dark:from-violet-400 dark:to-emerald-400
                           bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform text-center">
                 {{ stat.value }}
               </div>
-              <div class="text-sm text-slate-600 dark:text-slate-400 font-medium text-center">
+              <div class="text-sm text-slate-800 dark:text-slate-400 font-medium text-center">
                 {{ languageService.getTranslation(stat.label) }}
               </div>
             </div>
@@ -139,7 +139,7 @@ export class BenefitsComponent {
 
   sectionSubtitle(): string {
     return this.languageService.getTranslation({
-      he: 'משלב ידע הנדסי ב-R&D עם מיומנויות טכנולוגיות מתקדמות לפתרונות דיגיטליים מעוצבים',
+      he: 'משלבת ידע הנדסי ב-R&D עם מיומנויות טכנולוגיות מתקדמות לפתרונות דיגיטליים מעוצבים',
       en: 'Combining R&D engineering knowledge with advanced tech skills for exceptional digital solutions'
     });
   }
@@ -160,7 +160,7 @@ export class BenefitsComponent {
 
   professionalDescription(): string {
     return this.languageService.getTranslation({
-      he: 'משלב ניסיון עשיר בהובלה טכנולוגית עם תשוקה ליצירה דיגיטלית - מתמחה בפיתוח Full-Stack, ניהול נתונים וארכיטקטורות ענן, לצד מיומנויות מתקדמות בכלי AI יצירתיים כמו ChatGPT, Claude, Gemini, Canva ו-CapCut. גישה ייחודית המשלבת חשיבה הנדסית מדויקת עם יכולות עיצוב ויצירה דיגיטלית.',
+      he: 'משלבת ניסיון עשיר בהובלה טכנולוגית עם תשוקה ליצירה דיגיטלית - מתמחה בפיתוח Full-Stack, ניהול נתונים וארכיטקטורות ענן, לצד מיומנויות מתקדמות בכלי AI יצירתיים כמו ChatGPT, Claude, Gemini, Canva ו-CapCut. גישה ייחודית המשלבת חשיבה הנדסית מדויקת עם יכולות עיצוב ויצירה דיגיטלית.',
       en: 'Combining rich experience in technical leadership with passion for digital creation - specializing in Full-Stack development, data management and cloud architectures, alongside advanced skills in creative AI tools like ChatGPT, Claude, Gemini, Canva and CapCut. A unique approach that merges precise engineering thinking with digital design and creative capabilities.'
     });
   }
@@ -222,7 +222,7 @@ export class BenefitsComponent {
       'אסטרטגיות בשרשרת אספקה': '/assets/icons/IMG_8877-removebg-preview.png',
       'פיתוח תוכנה Full-Stack': '/assets/icons/IMG_8880-removebg-preview.png',
       'ניתוח נתונים': '/assets/icons/IMG_8891-removebg-preview.png',
-      'אוטומציות וסוכני AI': '/assets/icons/IMG_8889-removebg-preview.png'
+      'אוטומציות ובינה מלאכותית': '/assets/icons/IMG_8889-removebg-preview.png'
     };
 
     return icons[titleHe] || '/assets/icons/IMG_8877-removebg-preview.png';

@@ -45,9 +45,9 @@ export class ButtonComponent {
   private getVariantClasses(): string {
     const variants = {
       primary: 'bg-primary-600 hover:bg-primary-700 dark:bg-violet-600 dark:hover:bg-violet-700 text-white shadow-lg hover:shadow-xl dark:shadow-violet-500/25 transform hover:scale-105 btn-artistic',
-      secondary: 'bg-slate-100 hover:bg-slate-200 dark:bg-midnight-700 dark:hover:bg-midnight-600 text-slate-900 dark:text-slate-100 shadow-md hover:shadow-lg dark:shadow-violet-500/10 btn-artistic',
+      secondary: 'bg-white hover:bg-primary-50 dark:bg-midnight-700 dark:hover:bg-midnight-600 text-slate-900 dark:text-slate-100 shadow-md hover:shadow-lg dark:shadow-violet-500/10 border border-slate-200 dark:border-violet-500/20 btn-artistic',
       whatsapp: 'bg-accent-500 hover:bg-accent-600 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white shadow-lg hover:shadow-xl dark:shadow-emerald-500/25 transform hover:scale-105 btn-artistic',
-      outline: 'border-2 border-primary-600 dark:border-violet-500 text-primary-600 dark:text-violet-400 hover:bg-primary-600 dark:hover:bg-violet-600 hover:text-white dark:hover:text-white glass btn-artistic'
+      outline: 'border-2 border-primary-600 dark:border-violet-500 text-primary-600 dark:text-violet-400 hover:bg-primary-50 dark:hover:bg-violet-600 hover:text-primary-700 dark:hover:text-white bg-white dark:bg-transparent btn-artistic'
     };
     return variants[this.variant];
   }

@@ -230,7 +230,7 @@ export const CONTENT_DATA: ContentSection = {
       en: 'ARTech - Advanced Digital Designs'
     },
     subheadline: {
-      he: 'עיצובים אומנותיים • דפי נחיתה מותאמים',
+      he: 'עיצובים אומנותיים • דפי נחיתה מותאמים • הדרכות טכניות',
       en: 'Artistic Designs • Custom Landing Pages'
     },
     cta: {
@@ -271,11 +271,11 @@ export const CONTENT_DATA: ContentSection = {
     },
     {
       title: {
-        he: 'אוטומציות וסוכני AI',
+        he: 'אוטומציות ובינה מלאכותית',
         en: 'Automations & AI Agents'
       },
       description: {
-        he: 'פיתוח סוכני AI מותאמים לשיפור תהליכים',
+        he: 'פיתוח פתרונות מתקדמים לשיפור תהליכים',
         en: 'Developing custom AI agents to enhance processes'
       }
     }
@@ -504,3 +504,35 @@ export const CONTENT_DATA: ContentSection = {
     }
   ]
 };
+
+// Resources & Workshops Data
+export const RESOURCES_DATA = [
+  {
+    id: 'sample-manual-1',
+    title: {
+      he: 'מדריך לדוגמה 1',
+      en: 'Sample Manual 1'
+    },
+    description: {
+      he: 'תיאור של המדריך - החלף עם התוכן שלך',
+      en: 'Manual description - replace with your content'
+    },
+    type: 'manual' as const,
+    fileUrl: '', // Add your file URL here
+    tags: ['Example', 'Manual']
+  },
+  {
+    id: 'sample-powerpoint-1',
+    title: {
+      he: 'מצגת סדנה לדוגמה',
+      en: 'Sample Workshop Presentation'
+    },
+    description: {
+      he: 'תיאור של המצגת - החלף עם התוכן שלך',
+      en: 'Presentation description - replace with your content'
+    },
+    type: 'powerpoint' as const,
+    fileUrl: '', // Add your file URL here
+    tags: ['Workshop', 'Training']
+  }
+];

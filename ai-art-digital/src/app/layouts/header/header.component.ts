@@ -10,7 +10,7 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
   standalone: true,
   imports: [CommonModule, LanguageToggleComponent, ThemeToggleComponent],
   template: `
-    <header class="fixed top-0 left-0 right-0 z-40 glass backdrop-blur-md border-b border-white/20 dark:border-violet-500/20">
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-violet-500/20 shadow-sm">
       <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
 
@@ -31,7 +31,7 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
             <div [class]="navClasses">
               <a *ngFor="let item of navigationItems()"
                  [href]="'#' + item.anchor"
-                 class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-slate-50 dark:hover:bg-violet-500/10">
+                 class="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-slate-100 dark:hover:bg-violet-500/10">
                 {{ item.label }}
               </a>
             </div>
@@ -46,7 +46,7 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
             <div class="md:hidden">
               <button
                 (click)="toggleMobileMenu()"
-                class="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 p-2 rounded-md hover:bg-slate-50 dark:hover:bg-violet-500/10 transition-colors"
+                class="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 p-2 rounded-md hover:bg-slate-100 dark:hover:bg-violet-500/10 transition-colors"
                 [attr.aria-label]="mobileMenuAriaLabel()">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path *ngIf="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -59,13 +59,13 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
 
         <!-- Mobile Navigation Menu -->
         <div *ngIf="mobileMenuOpen"
-             class="md:hidden glass border-t border-slate-200 dark:border-violet-500/20 py-4"
+             class="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-violet-500/20 py-4"
              [@slideDown]="mobileMenuOpen">
           <div [class]="mobileNavClasses">
             <a *ngFor="let item of navigationItems()"
                [href]="'#' + item.anchor"
                (click)="closeMobileMenu()"
-               class="block text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 px-3 py-3 text-base font-medium hover:bg-slate-50 dark:hover:bg-violet-500/10 rounded-md transition-colors">
+               class="block text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 px-3 py-3 text-base font-medium hover:bg-slate-100 dark:hover:bg-violet-500/10 rounded-md transition-colors">
               {{ item.label }}
             </a>
           </div>
@@ -112,6 +112,7 @@ export class HeaderComponent {
         { label: 'שירותים', anchor: 'services' },
         { label: 'אודותיי', anchor: 'about' },
         { label: 'תיק עבודות', anchor: 'portfolio' },
+        { label: 'משאבים', anchor: 'resources' },
         { label: 'מאמרים', anchor: 'articles' },
         { label: 'צור קשר', anchor: 'contact' }
       ],
@@ -119,6 +120,7 @@ export class HeaderComponent {
         { label: 'Services', anchor: 'services' },
         { label: 'About', anchor: 'about' },
         { label: 'Portfolio', anchor: 'portfolio' },
+        { label: 'Resources', anchor: 'resources' },
         { label: 'Articles', anchor: 'articles' },
         { label: 'Contact', anchor: 'contact' }
       ]

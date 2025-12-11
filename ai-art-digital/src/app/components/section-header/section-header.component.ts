@@ -8,7 +8,7 @@ import { LanguageService } from '../../language.service';
   imports: [CommonModule],
   template: `
     <div class="mb-12 text-center">
-      <div *ngIf="badge" class="inline-flex items-center px-4 py-2 glass border border-primary-200 dark:border-violet-500/30 text-primary-700 dark:text-violet-200 rounded-full text-sm font-semibold mb-4 pulse-glow">
+      <div *ngIf="badge" class="inline-flex items-center px-4 py-2 glass border border-primary-300 dark:border-violet-500/30 text-primary-800 dark:text-violet-200 rounded-full text-sm font-semibold mb-4 pulse-glow">
         <span [innerHTML]="badge"></span>
       </div>
 
@@ -38,7 +38,7 @@ export class SectionHeaderComponent {
       lg: 'text-4xl md:text-5xl lg:text-6xl'
     };
 
-    return `font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight whitespace-nowrap overflow-hidden text-ellipsis ${sizes[this.size]}`;
+    return `font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight ${sizes[this.size]}`;
   }
 
   get subtitleClasses(): string {
@@ -50,6 +50,6 @@ export class SectionHeaderComponent {
 
     const alignment = this.languageService.direction() === 'rtl' ? 'text-right' : 'text-left';
 
-    return `text-slate-600 dark:text-slate-300 leading-relaxed ${sizes[this.size]} ${alignment}`;
+    return `text-slate-800 dark:text-slate-300 leading-relaxed ${sizes[this.size]} ${alignment}`;
   }
 }

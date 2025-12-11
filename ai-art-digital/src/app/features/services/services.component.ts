@@ -50,11 +50,11 @@ import { SectionHeaderComponent } from '../../components/section-header/section-
 
         <!-- CTA Section -->
         <div class="mt-20 text-center">
-          <div class="glass border border-slate-200 dark:border-violet-500/20 rounded-2xl shadow-xl p-8 max-w-2xl mx-auto pulse-glow gradient-card-dark">
+          <div class="bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 rounded-2xl shadow-lg p-8 max-w-2xl mx-auto pulse-glow gradient-card-dark">
             <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-4">
               {{ customProjectTitle() }}
             </h3>
-            <p class="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
+            <p class="text-slate-800 dark:text-slate-300 mb-6 leading-relaxed">
               {{ customProjectDescription() }}
             </p>
             <button

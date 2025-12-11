@@ -13,23 +13,6 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
   template: `
     <section *ngIf="configService.isFeatureEnabled('showAboutMe')" id="about" class="relative py-12 bg-white dark:bg-gradient-to-br dark:from-midnight-800 dark:via-midnight-750 dark:to-midnight-700 overflow-hidden">
 
-      <!-- Background Elements with Floating Images -->
-      <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <!-- Floating Images - Your Creations - Artistic Collage Style -->
-
-        <!-- Scrapbook-style image with decorative corner - LARGER -->
-        <div [class]="'absolute top-16 w-52 sm:w-68 lg:w-84 opacity-25 dark:opacity-20 animate-float -rotate-6 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'right-8' : 'left-8')" style="animation-delay: -4s;">
-          <div class="relative bg-gradient-to-br from-primary-50 to-purple-50 dark:from-slate-700 dark:to-slate-600 p-5 shadow-2xl border-l-4 border-t-4 border-primary-400 dark:border-violet-400">
-            <div class="aspect-[4/3] overflow-hidden">
-              <img src="/assets/images/2.png" class="w-full h-full object-cover" alt="Creation">
-            </div>
-            <!-- Decorative corner pin -->
-            <div [class]="'absolute top-3 w-4 h-4 rounded-full bg-accent-500 dark:bg-emerald-500 shadow-lg ' + (languageService.direction() === 'rtl' ? 'left-3' : 'right-3')"></div>
-            <div [class]="'absolute bottom-3 w-4 h-4 rounded-full bg-primary-500 dark:bg-violet-500 shadow-lg ' + (languageService.direction() === 'rtl' ? 'right-3' : 'left-3')"></div>
-          </div>
-        </div>
-
-      </div>
 
       <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -46,12 +29,12 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
 
             <!-- Tech Stack -->
             <div class="mt-6">
-              <h3 class="text-base font-semibold text-slate-900 mb-3">
+              <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100 mb-3">
                 {{ techStackTitle() }}
               </h3>
               <div class="flex flex-wrap gap-2">
                 <span *ngFor="let tech of techStack"
-                      class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-medium hover:bg-slate-200 transition-colors">
+                      class="px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full text-xs font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">
                   {{ tech }}
                 </span>
               </div>
@@ -85,7 +68,7 @@ export class AboutComponent {
   configService = inject(ConfigService);
   aboutContent = CONTENT_DATA.about;
 
-  techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'AI Tools', 'Figma', 'Photoshop'];
+  techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'AI Tools', 'Canva', 'CapCut'];
 
   get contentOrder(): string {
     return this.languageService.direction() === 'rtl' ? 'order-2 lg:order-1' : 'order-2 lg:order-1';
