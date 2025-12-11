@@ -16,7 +16,7 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
 
           <!-- Brand & Description -->
           <div [class]="brandColumnClass">
-            <h3 class="text-xl font-bold mb-4 text-glow">{{ brandName() }}</h3>
+            <h3 class="text-xl font-bold mb-6 text-glow">{{ brandName() }}</h3>
             <p class="text-slate-700 dark:text-slate-400 leading-relaxed mb-6 max-w-sm">
               {{ brandDescription() }}
             </p>
@@ -47,7 +47,7 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
 
           <!-- Navigation -->
           <div class="md:text-center">
-            <h4 class="font-semibold mb-4 dark:text-glow">{{ navigationTitle() }}</h4>
+            <h4 class="font-semibold mb-6 dark:text-glow">{{ navigationTitle() }}</h4>
             <ul class="space-y-2">
               <li *ngFor="let item of navigationItems()">
                 <a
@@ -61,7 +61,7 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
 
           <!-- Contact Info -->
           <div [class]="contactColumnClass">
-            <h4 class="font-semibold mb-4 dark:text-glow">{{ contactTitle() }}</h4>
+            <h4 class="font-semibold mb-6 dark:text-glow">{{ contactTitle() }}</h4>
             <div class="space-y-3 text-slate-700 dark:text-slate-400">
               <div class="flex items-center bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 px-3 py-2 rounded-lg pulse-glow">
                 <svg [class.mr-2]="languageService.direction() === 'ltr'" [class.ml-2]="languageService.direction() === 'rtl'" class="w-5 h-5 text-accent-500 dark:text-emerald-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
