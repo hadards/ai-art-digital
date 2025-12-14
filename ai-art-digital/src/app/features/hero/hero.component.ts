@@ -27,21 +27,9 @@ import { ButtonComponent } from '../../components/button/button.component';
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
         <!-- Hadar bike image -->
-<div class="absolute" [class]="languageService.direction() === 'rtl' ? 'right-24 lg:right-32' : 'left-24 lg:left-32'" style="top: 240px">
-  <div class="w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 animate-float -rotate-12 hover:-rotate-6 transition-all duration-700">
-    <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover">
-  </div>
-</div>
-
-
-        <!-- Film strip style image - TALLER -->
-        <div [class]="'absolute top-16 w-56 sm:w-72 lg:w-96 opacity-25 dark:opacity-20 animate-float rotate-3 hover:-rotate-3 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -1s;">
-          <div class="bg-slate-900 dark:bg-slate-700 p-2 shadow-2xl">
-            <div class="border-y-4 border-slate-900 dark:border-slate-600">
-              <div class="aspect-[16/18] overflow-hidden">
-                <img src="/assets/images/1.jpg" class="w-full h-full object-cover" alt="Creation">
-              </div>
-            </div>
+        <div class="absolute" [class]="languageService.direction() === 'rtl' ? 'right-24 lg:right-32' : 'left-24 lg:left-32'" style="top: 240px">
+          <div class="w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 float-horizontal transition-all duration-700">
+            <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover">
           </div>
         </div>
 

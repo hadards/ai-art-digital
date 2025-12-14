@@ -22,6 +22,11 @@ export interface ServiceItem {
     en: string[];
   };
   featured?: boolean;
+  media?: {
+    type: 'video' | 'image' | 'pdf';
+    url: string;
+    thumbnail?: string;
+  };
 }
 
 export interface ArticleItem {

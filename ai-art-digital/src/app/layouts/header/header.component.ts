@@ -10,16 +10,16 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
   standalone: true,
   imports: [CommonModule, LanguageToggleComponent, ThemeToggleComponent],
   template: `
-    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-violet-500/20 shadow-sm">
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-violet-500/20 shadow-sm overflow-visible">
       <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
+        <div class="flex items-center justify-between h-16 overflow-visible">
 
           <!-- Logo/Brand -->
-          <div class="flex-shrink-0">
+          <div class="flex-shrink-0 overflow-visible relative z-50">
             <a href="#" class="flex items-center gap-2 group">
               <img src="/assets/images/logo.png"
                    alt="ARTech Logo"
-                   class="h-32 w-32 object-contain transition-transform group-hover:scale-110" />
+                   class="h-44 w-44 object-contain transition-transform group-hover:scale-110 -my-14" />
               <span class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-violet-400 transition-colors text-glow">
                 {{ brandName() }}
               </span>

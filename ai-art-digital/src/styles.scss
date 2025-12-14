@@ -271,6 +271,11 @@ body {
   50% { transform: translateY(-10px) rotate(1deg); }
 }
 
+@keyframes float-horizontal {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(15px); }
+}
+
 @keyframes pulse-glow {
   0%, 100% {
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
@@ -282,6 +287,10 @@ body {
 
 .float-gentle {
   animation: float-gentle 6s ease-in-out infinite;
+}
+
+.float-horizontal {
+  animation: float-horizontal 4s ease-in-out infinite;
 }
 
 .pulse-glow {

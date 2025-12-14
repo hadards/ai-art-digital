@@ -10,7 +10,6 @@ import { FooterComponent } from './layouts/footer/footer.component';
 
 // Features
 import { HeroComponent } from './features/hero/hero.component';
-import { BenefitsComponent } from './features/benefits/benefits.component';
 import { ServicesComponent } from './features/services/services.component';
 import { AboutComponent } from './features/about/about.component';
 import { PortfolioComponent } from './features/portfolio/portfolio.component';
@@ -32,7 +31,6 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
     FooterComponent,
     // Features
     HeroComponent,
-    BenefitsComponent,
     ServicesComponent,
     AboutComponent,
     PortfolioComponent,
@@ -53,11 +51,10 @@ import { WhatsAppFabComponent } from './components/whatsapp-fab/whatsapp-fab.com
         <ng-container *ngIf="isHomePage">
           <app-hero />
           <app-about />
-          <app-portfolio />
-          <app-resources />
           <app-services />
-          <app-benefits />
+          <app-resources />
           <app-articles />
+          <app-portfolio />
           <app-contact />
         </ng-container>
 

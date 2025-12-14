@@ -8,8 +8,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Professional Landing Page'
     },
     description: {
-      he: 'אתר מותאם אישית עם עיצוב מודרני ואופטימיזציה למכירות',
-      en: 'Custom website with modern design and sales optimization'
+      he: 'אתר מותאם אישית מהיר וממוקד המרות',
+      en: 'Fast custom website focused on conversions'
     },
     priceRange: {
       min: 1200,
@@ -36,7 +36,11 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Free hosting for 1 year'
       ]
     },
-    featured: true
+    featured: true,
+    media: {
+      type: 'video',
+      url: '/assets/videos/Recording real estate landing page.mp4'
+    }
   },
   {
     id: 'event-invitation',
@@ -45,8 +49,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Event Invitation Design'
     },
     description: {
-      he: 'הזמנות מעוצבות לחתונות, בר/בת מצווה ואירועים מיוחדים',
-      en: 'Designed invitations for weddings, bar/bat mitzvahs and special events'
+      he: 'הזמנות מעוצבות ייחודיות לאירועים מיוחדים',
+      en: 'Unique designed invitations for special events'
     },
     priceRange: {
       min: 300,
@@ -72,6 +76,10 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Digital version',
         'Multiple sizes'
       ]
+    },
+    media: {
+      type: 'image',
+      url: '/assets/images/11.jpg'
     }
   },
   {
@@ -81,8 +89,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Logo Design'
     },
     description: {
-      he: 'לוגו מקצועי ומזוהה עבור העסק או המותג שלך',
-      en: 'Professional and recognizable logo for your business or brand'
+      he: 'לוגו מקצועי ומזוהה למותג שלך',
+      en: 'Professional recognizable logo for your brand'
     },
     priceRange: {
       min: 400,
@@ -107,7 +115,11 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Usage guidelines'
       ]
     },
-    featured: true
+    featured: true,
+    media: {
+      type: 'image',
+      url: '/assets/images/logo.png'
+    }
   },
   {
     id: 'custom-comic',
@@ -116,8 +128,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Personalized Comic/Storybook'
     },
     description: {
-      he: 'סיפור מותאם אישית עם הדמויות שלכם כגיבורים',
-      en: 'Personalized story with your characters as heroes'
+      he: 'סיפור מאויר עם הדמויות שלכם כגיבורים',
+      en: 'Illustrated story with your characters as heroes'
     },
     priceRange: {
       min: 500,
@@ -143,6 +155,10 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Professional illustrations',
         'High-quality PDF file'
       ]
+    },
+    media: {
+      type: 'image',
+      url: '/assets/images/4.jpg'
     }
   },
   {
@@ -152,8 +168,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Baby Growth Story'
     },
     description: {
-      he: 'אלבום דיגיטלי המתעד את השנה הראשונה של התינוק',
-      en: 'Digital album documenting baby\'s first year'
+      he: 'אלבום דיגיטלי של השנה הראשונה',
+      en: 'Digital album of the first year'
     },
     priceRange: {
       min: 600,
@@ -179,6 +195,10 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Print-ready file',
         'Digital version'
       ]
+    },
+    media: {
+      type: 'image',
+      url: '/assets/images/family info.png'
     }
   },
   {
@@ -188,8 +208,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Custom Presentation Design'
     },
     description: {
-      he: 'מצגות PowerPoint מקצועיות לעסק או אירועים',
-      en: 'Professional PowerPoint presentations for business or events'
+      he: 'מצגות PowerPoint מקצועיות',
+      en: 'Professional PowerPoint presentations'
     },
     priceRange: {
       min: 400,
@@ -215,6 +235,10 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Animations',
         'PowerPoint file'
       ]
+    },
+    media: {
+      type: 'video',
+      url: '/assets/videos/Recording lawyer office.mp4'
     }
   }
 ];
