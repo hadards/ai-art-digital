@@ -336,8 +336,8 @@ export const CONTENT_DATA: ContentSection = {
       en: 'Hi, I\'m Hadar'
     },
     bio: {
-      he: 'Senior Software & Data Leader בפיליפס מדיקל עם 20+ שנות ניסיון בהייטק. אני מביאה מומחיות טכנית מעולם פיתוח התוכנה Enterprise לעולם העיצוב הדיגיטלי. מנסיון בהנעת צוותי פיתוח רב-תחומיים ופיתוח אפליקציות מורכבות, אני יוצרת פתרונות דיגיטליים מתקדמים שמבוססים על טכנולוגיה אמינה.',
-      en: 'Senior Software & Data Leader at Philips Medical with 20+ years of high-tech experience. I bring technical expertise from Enterprise software development to digital design. From leading cross-functional development teams and building complex applications, I create advanced digital solutions based on reliable technology.'
+      he: 'אני חיה ונושמת תוכנה ועיצובי AI. עם 20 שנות ניסיון מקצועי, האהבה שלי למכונות המורכבות האלה התחילה כבר בתחילת שנות ה-90 עם המחשב האישי הראשון שלי - 286, כשהתנסיתי ב-Pascal ו-Alleycat.\n\nלאורך הקריירה שלי, הובלתי צוותי תוכנה בפרויקטים שונים ב-R&D ובשרשרת אספקה, והפכתי לכתובת הראשונה הן מבחינה טכנית והן אישית.\n\nעיצוב דיגיטלי ואמנות חזותית הם האהבה האמיתית שלי - תשוקה שהתעוררה והתפתחה עם הופעת יכולות ה-AI לפני כמה שנים. היכולת לשלב את המומחיות הטכנית שלי עם הראייה האמנותית מאפשרת לי ליצור עיצובים דיגיטליים ייחודיים המשלבים חדשנות טכנולוגית עם אסתטיקה מרהיבה.',
+      en: 'I live and breathe software and AI design. With 20 years of professional experience, my love for these complex machines started way back in the early 90\'s with my first own \'286\' PC when I experimented with Pascal and Alleycat.\n\nThroughout my career, I\'ve led software teams on various projects in both R&D and Supply Chain, and became the go-to person both technically and personally.\n\nDigital art and visual design are my true love - a passion that emerged and blossomed with the advent of AI capabilities a few years ago. The ability to merge my technical expertise with artistic vision allows me to create unique digital designs that combine technological innovation with stunning aesthetics.'
     }
   },
   process: [

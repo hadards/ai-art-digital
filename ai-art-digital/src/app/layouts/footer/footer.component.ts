@@ -94,14 +94,14 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
         </div>
 
         <!-- Bottom Section -->
-        <div class="mt-12 pt-8 border-t border-slate-300 dark:border-violet-500/20 section-divider flex flex-col md:flex-row justify-between items-center">
+        <div class="mt-12 pt-8 border-t border-slate-300 dark:border-violet-500/20 section-divider flex flex-col md:flex-row justify-between items-center gap-4">
           <div [class]="copyrightClass">
             <p class="text-slate-600 dark:text-slate-500 text-sm">
               {{ copyrightText() }}
             </p>
           </div>
 
-          <div class="mt-4 md:mt-0 flex items-center space-x-4 text-slate-600 dark:text-slate-500 text-sm">
+          <div [class]="linksClass">
             <a href="/privacy-policy" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ privacyText() }}</a>
             <span>•</span>
             <a href="/terms-of-service" class="hover:text-slate-900 dark:hover:text-violet-300 transition-colors">{{ termsText() }}</a>
@@ -125,6 +125,13 @@ export class FooterComponent {
 
   get copyrightClass(): string {
     return this.languageService.direction() === 'rtl' ? 'md:text-right' : 'md:text-left';
+  }
+
+  get linksClass(): string {
+    const baseClasses = 'flex items-center gap-4 text-slate-600 dark:text-slate-500 text-sm';
+    return this.languageService.direction() === 'rtl'
+      ? `${baseClasses} md:text-right`
+      : `${baseClasses} md:text-left`;
   }
 
   brandName(): string {

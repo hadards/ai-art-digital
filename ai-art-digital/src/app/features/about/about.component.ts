@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
-import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { CONTENT_DATA } from '../../data/content.data';
 
 // Icon mapping for benefits
@@ -18,7 +17,7 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule],
   template: `
     <section *ngIf="configService.isFeatureEnabled('showAboutMe')" id="about" class="relative py-12 bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/30 dark:to-midnight-900 overflow-hidden">
 
@@ -45,12 +44,18 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 
             <!-- Text Content -->
             <div [class]="contentOrder">
-              <app-section-header
-                [title]="languageService.getTranslation(aboutContent.headline)"
-                [subtitle]="languageService.getTranslation(aboutContent.bio)"
-                [centered]="false"
-                size="md">
-              </app-section-header>
+              <!-- Title -->
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 dark:text-glow mb-6 leading-tight">
+                {{ languageService.getTranslation(aboutContent.headline) }}
+              </h2>
+
+              <!-- Bio with proper paragraphs -->
+              <div class="space-y-4 text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
+                <p *ngFor="let paragraph of bioParagraphs()"
+                   class="text-slate-800 dark:text-slate-300">
+                  {{ paragraph }}
+                </p>
+              </div>
 
               <!-- Tech Stack -->
               <div class="mt-6">
@@ -163,6 +168,11 @@ export class AboutComponent {
       he: 'כלים וטכנולוגיות',
       en: 'Tools & Technologies'
     });
+  }
+
+  bioParagraphs(): string[] {
+    const bioText = this.languageService.getTranslation(this.aboutContent.bio);
+    return bioText.split('\n\n').filter(p => p.trim().length > 0);
   }
 
   // Helper methods
