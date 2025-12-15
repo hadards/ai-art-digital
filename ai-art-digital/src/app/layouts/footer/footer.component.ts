@@ -90,7 +90,7 @@ import { LanguageToggleComponent } from '../../components/language-toggle/langua
             <div class="mt-6">
               <app-language-toggle />
             </div>
-          </div>
+          </div> 
         </div>
 
         <!-- Bottom Section -->

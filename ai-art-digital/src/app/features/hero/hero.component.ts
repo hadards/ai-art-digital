@@ -44,8 +44,8 @@ import { ButtonComponent } from '../../components/button/button.component';
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 mb-6 leading-tight animate-slide-up tracking-tight" style="filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 15px rgba(139, 92, 246, 0.3));">
-          <span class="bg-gradient-to-r from-primary-700 via-purple-700 to-accent-700 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 dark:text-slate-100 mb-6 leading-tight animate-slide-up tracking-tight">
+          <span class="bg-gradient-to-r from-primary-700 via-purple-700 to-accent-700 dark:from-violet-400 dark:via-purple-400 dark:to-emerald-400 bg-clip-text text-transparent text-glow-animate">
             {{ languageService.getTranslation(heroContent.headline) }}
           </span>
         </h1>

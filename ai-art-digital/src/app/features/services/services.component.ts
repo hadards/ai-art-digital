@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
@@ -99,24 +99,93 @@ import { ServiceItem } from '../../models/service.model';
 
               <!-- Media Section -->
               <div [class]="'relative ' + (i % 2 === 1 && languageService.direction() === 'ltr' ? 'lg:col-start-1 lg:row-start-1' : '') + (i % 2 === 1 && languageService.direction() === 'rtl' ? 'lg:col-start-2' : '')">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500">
+
+                <!-- Gallery Carousel - Multiple Images with Stack Effect -->
+                <div *ngIf="service.gallery && service.gallery.length > 0"
+                     [class]="'relative ' + (service.id === 'baby-story' ? 'max-w-sm mx-auto' : '')"
+                     (mouseenter)="pauseCarousel(service.id)"
+                     (mouseleave)="resumeCarousel(service.id)">
+
+                  <!-- Stacked Cards Background Effect - Old Paper Style -->
+                  <div class="absolute inset-0 z-0">
+                    <!-- Third card (furthest back) - Aged beige paper -->
+                    <div [class]="'absolute inset-0 rounded-2xl transform -rotate-3 translate-y-3 opacity-60 shadow-lg ' + (languageService.direction() === 'rtl' ? '-translate-x-4' : 'translate-x-4')"
+                         style="background: linear-gradient(135deg, #e8dcc4 0%, #d4c4a8 100%); border: 1px solid rgba(139, 115, 85, 0.3);"></div>
+                    <!-- Second card - Vintage cream paper -->
+                    <div [class]="'absolute inset-0 rounded-2xl transform rotate-2 translate-y-1.5 opacity-75 shadow-xl ' + (languageService.direction() === 'rtl' ? '-translate-x-2' : 'translate-x-2')"
+                         style="background: linear-gradient(135deg, #f5ebe0 0%, #e8dcc4 100%); border: 1px solid rgba(139, 115, 85, 0.2);"></div>
+                  </div>
+
+                  <!-- Main Carousel Container -->
+                  <div class="relative rounded-2xl overflow-hidden shadow-2xl group z-10">
+                    <!-- Carousel Container -->
+                    <div [class]="'relative bg-slate-200 dark:bg-slate-800 ' + (service.id === 'baby-story' ? 'aspect-[3/4]' : 'aspect-[4/3]')">
+                      <!-- Images -->
+                      <div *ngFor="let imageUrl of service.gallery; let imgIndex = index"
+                           [class]="'absolute inset-0 transition-opacity duration-700 ease-in-out ' +
+                                    (getActiveSlide(service.id) === imgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0')">
+                        <img
+                          [src]="imageUrl"
+                          [alt]="languageService.getTranslation(service.title) + ' ' + (imgIndex + 1)"
+                          class="w-full h-full object-contain">
+                      </div>
+
+                      <!-- Gradient Overlay -->
+                      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none z-20"></div>
+                    </div>
+
+                    <!-- Navigation Dots -->
+                  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
+                    <button *ngFor="let imageUrl of service.gallery; let dotIndex = index"
+                            (click)="setActiveSlide(service.id, dotIndex)"
+                            [class]="'w-2.5 h-2.5 rounded-full transition-all duration-300 ' +
+                                     (getActiveSlide(service.id) === dotIndex
+                                       ? 'bg-white w-8'
+                                       : 'bg-white/50 hover:bg-white/75')"
+                            [attr.aria-label]="'Go to slide ' + (dotIndex + 1)">
+                    </button>
+                  </div>
+
+                  <!-- Navigation Arrows -->
+                  <button (click)="previousSlide(service.id)"
+                          class="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-gradient-to-r from-primary-500 to-purple-600 dark:from-violet-500 dark:to-purple-600 backdrop-blur-sm hover:from-primary-600 hover:to-purple-700 dark:hover:from-violet-600 dark:hover:to-purple-700 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 shadow-lg hover:shadow-xl hover:scale-110"
+                          aria-label="Previous slide">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                  </button>
+                  <button (click)="nextSlide(service.id)"
+                          class="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-accent-500 dark:from-purple-600 dark:to-emerald-500 backdrop-blur-sm hover:from-purple-700 hover:to-accent-600 dark:hover:from-purple-700 dark:hover:to-emerald-600 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 shadow-lg hover:shadow-xl hover:scale-110"
+                          aria-label="Next slide">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                  </button>
+                  </div>
+                </div>
+
+                <!-- Single Media (Video or Image) -->
+                <div *ngIf="!service.gallery && service.media" class="relative rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500">
 
                   <!-- Video -->
-                  <div *ngIf="service.media?.type === 'video'" class="aspect-video bg-slate-900">
+                  <div *ngIf="service.media.type === 'video'" class="aspect-video bg-slate-900">
                     <video
-                      [src]="service.media!.url"
+                      [src]="service.media.url"
                       class="w-full h-full object-cover"
                       autoplay
                       loop
                       muted
-                      playsinline>
+                      playsinline
+                      preload="auto"
+                      [muted]="true"
+                      defaultMuted>
                     </video>
                   </div>
 
                   <!-- Image -->
-                  <div *ngIf="service.media?.type === 'image'" class="aspect-video bg-slate-200 dark:bg-slate-800">
+                  <div *ngIf="service.media.type === 'image'" class="aspect-video bg-slate-200 dark:bg-slate-800">
                     <img
-                      [src]="service.media!.url"
+                      [src]="service.media.url"
                       [alt]="languageService.getTranslation(service.title)"
                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                   </div>
@@ -157,9 +226,82 @@ import { ServiceItem } from '../../models/service.model';
     </section>
   `
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnDestroy {
   protected readonly languageService = inject(LanguageService);
   protected readonly services: readonly ServiceItem[] = SERVICES_DATA;
+
+  // Carousel state
+  private carouselStates = new Map<string, number>();
+  private carouselIntervals = new Map<string, any>();
+
+  constructor() {
+    // Initialize carousel for services with galleries
+    this.services.forEach(service => {
+      if (service.gallery && service.gallery.length > 0) {
+        this.carouselStates.set(service.id, 0);
+        this.startAutoPlay(service.id, service.gallery.length);
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    // Clean up intervals
+    this.carouselIntervals.forEach(interval => clearInterval(interval));
+  }
+
+  // Carousel methods
+  getActiveSlide(serviceId: string): number {
+    return this.carouselStates.get(serviceId) || 0;
+  }
+
+  setActiveSlide(serviceId: string, index: number): void {
+    this.carouselStates.set(serviceId, index);
+  }
+
+  nextSlide(serviceId: string): void {
+    const service = this.services.find(s => s.id === serviceId);
+    if (service?.gallery) {
+      const current = this.getActiveSlide(serviceId);
+      const next = (current + 1) % service.gallery.length;
+      this.setActiveSlide(serviceId, next);
+    }
+  }
+
+  previousSlide(serviceId: string): void {
+    const service = this.services.find(s => s.id === serviceId);
+    if (service?.gallery) {
+      const current = this.getActiveSlide(serviceId);
+      const prev = current === 0 ? service.gallery.length - 1 : current - 1;
+      this.setActiveSlide(serviceId, prev);
+    }
+  }
+
+  pauseCarousel(serviceId: string): void {
+    const interval = this.carouselIntervals.get(serviceId);
+    if (interval) {
+      clearInterval(interval);
+      this.carouselIntervals.delete(serviceId);
+    }
+  }
+
+  resumeCarousel(serviceId: string): void {
+    const service = this.services.find(s => s.id === serviceId);
+    if (service?.gallery) {
+      this.startAutoPlay(serviceId, service.gallery.length);
+    }
+  }
+
+  private startAutoPlay(serviceId: string, galleryLength: number): void {
+    // Clear existing interval if any
+    this.pauseCarousel(serviceId);
+
+    // Start new interval (change slide every 4 seconds)
+    const interval = setInterval(() => {
+      this.nextSlide(serviceId);
+    }, 4000);
+
+    this.carouselIntervals.set(serviceId, interval);
+  }
 
   // Section translations
   sectionTitle(): string {

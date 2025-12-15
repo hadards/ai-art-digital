@@ -27,6 +27,7 @@ export interface ServiceItem {
     url: string;
     thumbnail?: string;
   };
+  gallery?: string[]; // For multiple images display
 }
 
 export interface ArticleItem {

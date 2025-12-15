@@ -77,10 +77,10 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Multiple sizes'
       ]
     },
-    media: {
-      type: 'image',
-      url: '/assets/images/11.jpg'
-    }
+    gallery: [
+      '/assets/images/sample1.png',
+      '/assets/images/11.jpg'
+    ]
   },
   {
     id: 'logo-design',
@@ -116,10 +116,12 @@ export const SERVICES_DATA: ServiceItem[] = [
       ]
     },
     featured: true,
-    media: {
-      type: 'image',
-      url: '/assets/images/logo.png'
-    }
+    gallery: [
+      '/assets/images/logo.png',
+      '/assets/images/carrier-logo.jpg',
+      '/assets/images/sample4.png',
+      '/assets/images/sample3.png'
+    ]
   },
   {
     id: 'custom-comic',
@@ -196,10 +198,9 @@ export const SERVICES_DATA: ServiceItem[] = [
         'Digital version'
       ]
     },
-    media: {
-      type: 'image',
-      url: '/assets/images/family info.png'
-    }
+    gallery: [
+      '/assets/images/sample2.png'
+    ]
   },
   {
     id: 'presentation',
