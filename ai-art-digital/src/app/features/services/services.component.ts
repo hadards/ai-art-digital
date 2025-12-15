@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
-import { SERVICES_DATA } from '../../data/content.data';
-import { ServiceCardComponent } from '../../components/service-card/service-card.component';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { WhatsAppUtil } from '../../utils/whatsapp.util';
+import { SERVICES_DATA } from '../../data/content.data';
+import { ServiceItem } from '../../models/service.model';
 
 @Component({
   selector: 'app-services',
@@ -158,9 +158,10 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
   `
 })
 export class ServicesComponent {
-  languageService = inject(LanguageService);
-  services = SERVICES_DATA;
+  protected readonly languageService = inject(LanguageService);
+  protected readonly services: readonly ServiceItem[] = SERVICES_DATA;
 
+  // Section translations
   sectionTitle(): string {
     return this.languageService.getTranslation({
       he: 'השירותים שלי',
@@ -175,6 +176,7 @@ export class ServicesComponent {
     });
   }
 
+  // Custom project section translations
   customProjectTitle(): string {
     return this.languageService.getTranslation({
       he: 'יש לך רעיון מיוחד?',
@@ -196,19 +198,23 @@ export class ServicesComponent {
     });
   }
 
-  formatPrice(service: any): string {
+  // Helper methods
+  formatPrice(service: ServiceItem): string {
     return WhatsAppUtil.formatPrice(service.priceRange, this.languageService.language());
   }
 
-  onServiceClick(service: any): void {
+  trackByServiceId(_index: number, service: ServiceItem): string {
+    return service.id;
+  }
+
+  // Event handlers
+  onServiceClick(service: ServiceItem): void {
+    // TODO: Implement WhatsApp integration for service orders
     console.log('Service click:', service.id);
   }
 
   onCustomProjectClick(): void {
+    // TODO: Implement WhatsApp integration for custom projects
     console.log('Custom project WhatsApp click');
-  }
-
-  trackByServiceId(index: number, service: any): string {
-    return service.id;
   }
 }

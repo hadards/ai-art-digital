@@ -2,9 +2,18 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
-import { CONTENT_DATA } from '../../data/content.data';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
-import { WhatsAppUtil } from '../../utils/whatsapp.util';
+import { CONTENT_DATA } from '../../data/content.data';
+
+// Icon mapping for benefits
+const BENEFIT_ICONS: Record<string, string> = {
+  'אסטרטגיות בשרשרת אספקה': '/assets/icons/IMG_8877-removebg-preview.png',
+  'פיתוח תוכנה Full-Stack': '/assets/icons/IMG_8880-removebg-preview.png',
+  'ניתוח נתונים': '/assets/icons/IMG_8891-removebg-preview.png',
+  'אוטומציות ובינה מלאכותית': '/assets/icons/IMG_8889-removebg-preview.png'
+};
+
+const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 
 @Component({
   selector: 'app-about',
@@ -130,22 +139,25 @@ import { WhatsAppUtil } from '../../utils/whatsapp.util';
   `
 })
 export class AboutComponent {
-  languageService = inject(LanguageService);
-  configService = inject(ConfigService);
-  aboutContent = CONTENT_DATA.about;
-  benefits = CONTENT_DATA.benefits;
-  stats = CONTENT_DATA.stats;
+  protected readonly languageService = inject(LanguageService);
+  protected readonly configService = inject(ConfigService);
 
-  techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'AI Tools', 'Canva', 'CapCut'];
+  // Content data
+  protected readonly aboutContent = CONTENT_DATA.about;
+  protected readonly benefits = CONTENT_DATA.benefits;
+  protected readonly stats = CONTENT_DATA.stats;
+  protected readonly techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'AI Tools', 'Canva', 'CapCut'] as const;
 
+  // Layout order for RTL/LTR
   get contentOrder(): string {
-    return this.languageService.direction() === 'rtl' ? 'order-2 lg:order-1' : 'order-2 lg:order-1';
+    return 'order-2 lg:order-1';
   }
 
   get imageOrder(): string {
-    return this.languageService.direction() === 'rtl' ? 'order-1 lg:order-2' : 'order-1 lg:order-2';
+    return 'order-1 lg:order-2';
   }
 
+  // Translations
   techStackTitle(): string {
     return this.languageService.getTranslation({
       he: 'כלים וטכנולוגיות',
@@ -153,48 +165,12 @@ export class AboutComponent {
     });
   }
 
-  getIconForBenefit(benefit: any): string {
-    const titleHe = benefit.title.he;
-
-    const icons: Record<string, string> = {
-      'אסטרטגיות בשרשרת אספקה': '/assets/icons/IMG_8877-removebg-preview.png',
-      'פיתוח תוכנה Full-Stack': '/assets/icons/IMG_8880-removebg-preview.png',
-      'ניתוח נתונים': '/assets/icons/IMG_8891-removebg-preview.png',
-      'אוטומציות ובינה מלאכותית': '/assets/icons/IMG_8889-removebg-preview.png'
-    };
-
-    return icons[titleHe] || '/assets/icons/IMG_8877-removebg-preview.png';
+  // Helper methods
+  getIconForBenefit(benefit: { title: { he: string } }): string {
+    return BENEFIT_ICONS[benefit.title.he] || DEFAULT_BENEFIT_ICON;
   }
 
   trackByIndex(index: number): number {
     return index;
-  }
-
-  ctaText(): string {
-    return this.languageService.getTranslation({
-      he: 'בוא נעבוד ביחד',
-      en: 'Let\'s Work Together'
-    });
-  }
-
-  responseTimeText(): string {
-    return this.languageService.getTranslation({
-      he: 'זמן מענה: עד 24 שעות',
-      en: 'Response time: Up to 24 hours'
-    });
-  }
-
-  onWhatsAppClick(): void {
-    const config = this.configService.getConfig();
-
-    const url = WhatsAppUtil.generateWhatsAppUrl(config.whatsappNumber, {
-      language: this.languageService.language(),
-      customMessage: this.languageService.getTranslation({
-        he: 'שלום! קראתי עליך באתר ואשמח לעבוד איתך על פרויקט. בוא נדבר!',
-        en: 'Hello! I read about you on the website and would love to work with you on a project. Let\'s talk!'
-      })
-    });
-
-    window.open(url, '_blank');
   }
 }

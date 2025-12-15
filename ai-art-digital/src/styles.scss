@@ -265,26 +265,29 @@ body {
   background: #64748b;
 }
 
-/* Floating Animation Variants */
+/* ========================================
+   Animation Keyframes & Classes
+   ======================================== */
+
+/* Vertical floating animation with gentle rotation */
 @keyframes float-gentle {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(1deg); }
 }
 
+/* Horizontal floating animation (no rotation) */
 @keyframes float-horizontal {
   0%, 100% { transform: translateX(0px); }
   50% { transform: translateX(15px); }
 }
 
+/* Pulsing glow effect for elements */
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
 }
 
+/* Animation utility classes */
 .float-gentle {
   animation: float-gentle 6s ease-in-out infinite;
 }
