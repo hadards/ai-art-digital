@@ -27,7 +27,7 @@ import { ButtonComponent } from '../../components/button/button.component';
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
 
         <!-- Hadar bike image -->
-        <div class="absolute" [class]="languageService.direction() === 'rtl' ? 'left-24 lg:left-32' : 'left-4 md:left-auto md:right-24 lg:right-32'" style="top: 240px">
+        <div class="absolute" [class]="languageService.direction() === 'rtl' ? 'left-24 lg:left-32' : 'right-4 md:right-24 lg:right-32'" style="top: 240px">
           <div class="w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 float-horizontal transition-all duration-700">
             <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover" alt="Hadar">
           </div>
@@ -56,7 +56,7 @@ import { ButtonComponent } from '../../components/button/button.component';
         </p>
 
         <!-- CTA Button -->
-        <div [class]="'flex items-center animate-slide-up ' + (languageService.direction() === 'rtl' ? 'justify-start md:justify-center pl-4 md:pl-0' : 'justify-end md:justify-center pr-4 md:pr-0')" style="animation-delay: 0.4s;">
+        <div [class]="'flex items-center animate-slide-up ' + (languageService.direction() === 'rtl' ? 'justify-start md:justify-center pl-4 md:pl-0' : 'justify-start md:justify-center pl-4 md:pl-0')" style="animation-delay: 0.4s;">
           <app-button
             variant="outline"
             size="md"
