@@ -52,12 +52,12 @@ export const SERVICES_DATA: ServiceItem[] = [
       },
       {
         title: {
-          he: 'מדריך PowerPoint ב-Canva',
-          en: 'PowerPoint in Canva Guide'
+          he: 'מדריך ליצירת מצגת PowerPoint ב-Gemini',
+          en: 'Create PowerPoint Presentation in Gemini Guide'
         },
         description: {
-          he: 'מדריך מפורט ליצירת מצגות PowerPoint מקצועיות באמצעות Canva',
-          en: 'Detailed guide for creating professional PowerPoint presentations using Canva'
+          he: 'מדריך פשוט ליצירת מצגות PowerPoint מקצועיות באמצעות Gemini',
+          en: 'Simple guide for creating professional PowerPoint presentations using Gemini'
         },
         url: '/assets/manuals/Power point in Canva manual.png',
         type: 'image'
@@ -279,7 +279,7 @@ export const CONTENT_DATA: ContentSection = {
     },
     subheadline: {
       he: 'עיצובים אומנותיים • דפי נחיתה מותאמים • הדרכות טכניות',
-      en: 'Artistic Designs • Custom Landing Pages'
+      en: 'Artistic Designs • Custom Landing Pages • Technical Trainings'
     },
     cta: {
       he: 'צור קשר',
