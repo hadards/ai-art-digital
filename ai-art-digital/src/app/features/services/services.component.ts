@@ -175,14 +175,31 @@ import { ServiceItem } from '../../models/service.model';
 
                     <!-- Manual Preview -->
                     <div class="aspect-[3/4] bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 relative overflow-hidden">
+                      <!-- PDF Preview - Desktop only (mobile shows thumbnail to avoid auto-download) -->
                       <div *ngIf="manual.type === 'pdf'" class="absolute inset-0">
-                        <iframe [src]="getSafePdfUrl(manual.url)" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
-                        <div class="absolute inset-0 pointer-events-none"></div>
+                        <!-- Show iframe preview on desktop -->
+                        <div class="hidden md:block absolute inset-0">
+                          <iframe [src]="getSafePdfUrl(manual.url)" class="w-full h-full pointer-events-none" frameborder="0"></iframe>
+                          <div class="absolute inset-0 pointer-events-none"></div>
+                        </div>
+                        <!-- Show thumbnail on mobile -->
+                        <div class="md:hidden absolute inset-0">
+                          <img *ngIf="manual.thumbnail" [src]="manual.thumbnail" [alt]="languageService.getTranslation(manual.title)" class="w-full h-full object-cover">
+                          <div *ngIf="!manual.thumbnail" class="absolute inset-0 flex flex-col items-center justify-center">
+                            <svg class="w-20 h-20 text-red-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                              <path d="M14 2v6h6M9.5 11.5h5M9.5 14.5h5M9.5 17.5h3"/>
+                            </svg>
+                            <div class="text-slate-600 dark:text-slate-400 font-semibold">{{ languageService.getTranslation({ he: 'מצגת PDF', en: 'PDF Presentation' }) }}</div>
+                          </div>
+                        </div>
                         <div class="absolute top-3 right-3 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">PDF</div>
                       </div>
+
+                      <!-- Image Preview -->
                       <img *ngIf="manual.type === 'image'" [src]="manual.url" [alt]="languageService.getTranslation(manual.title)" class="w-full h-full object-cover">
 
-                      <!-- Hover Overlay -->
+                      <!-- Hover/Click Overlay -->
                       <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover/manual:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                         <a [href]="manual.url" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-lg shadow-lg font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

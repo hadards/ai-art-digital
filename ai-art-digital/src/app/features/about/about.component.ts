@@ -102,17 +102,17 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-accent-400/30 via-pink-400/20 to-transparent dark:from-emerald-500/20 dark:via-pink-500/10 dark:to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
 
             <!-- Content -->
-            <div class="relative p-12">
+            <div class="relative p-4 md:p-12">
               <!-- Highlights -->
-              <div class="grid grid-cols-3 gap-4">
+              <div class="grid grid-cols-3 gap-2 md:gap-4">
                 <div *ngFor="let benefit of benefits; let i = index"
-                     class="group relative p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                     class="group relative p-2 md:p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div class="flex flex-col items-center text-center">
-                    <img [src]="getIconForBenefit(benefit)" [alt]="languageService.getTranslation(benefit.title)" class="w-20 h-20 object-contain mb-3 transform group-hover:scale-110 transition-transform duration-300" />
-                    <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2 leading-tight">
+                    <img [src]="getIconForBenefit(benefit)" [alt]="languageService.getTranslation(benefit.title)" class="w-12 h-12 md:w-20 md:h-20 object-contain mb-2 md:mb-3 transform group-hover:scale-110 transition-transform duration-300" />
+                    <h4 class="text-[10px] md:text-sm font-bold text-slate-900 dark:text-white mb-1 md:mb-2 leading-tight">
                       {{ languageService.getTranslation(benefit.title) }}
                     </h4>
-                    <p class="text-xs text-slate-700 dark:text-slate-400 leading-relaxed">
+                    <p class="text-[8px] md:text-xs text-slate-700 dark:text-slate-400 leading-tight md:leading-relaxed">
                       {{ languageService.getTranslation(benefit.description) }}
                     </p>
                   </div>
@@ -124,15 +124,15 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 
         <!-- Stats Row -->
         <div class="flex justify-center">
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl">
+          <div class="grid grid-cols-3 gap-4 md:gap-6 max-w-4xl w-full">
             <div *ngFor="let stat of stats; trackBy: trackByIndex"
-                 class="flex flex-col items-center justify-center text-center p-6 bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 rounded-2xl
+                 class="flex flex-col items-center justify-center text-center p-3 md:p-6 bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 rounded-2xl
                         hover:shadow-lg transition-all duration-300 group">
-              <div class="text-4xl font-bold bg-gradient-to-r from-primary-700 to-accent-700 dark:from-violet-400 dark:to-emerald-400
+              <div class="text-2xl md:text-4xl font-bold bg-gradient-to-r from-primary-700 to-accent-700 dark:from-violet-400 dark:to-emerald-400
                           bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform text-center">
                 {{ stat.value }}
               </div>
-              <div class="text-sm text-slate-800 dark:text-slate-400 font-medium text-center">
+              <div class="text-xs md:text-sm text-slate-800 dark:text-slate-400 font-medium text-center">
                 {{ languageService.getTranslation(stat.label) }}
               </div>
             </div>

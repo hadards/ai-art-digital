@@ -56,7 +56,7 @@ import { ButtonComponent } from '../../components/button/button.component';
         </p>
 
         <!-- CTA Button -->
-        <div class="flex justify-center items-center animate-slide-up" style="animation-delay: 0.4s;">
+        <div [class]="'flex items-center animate-slide-up ' + (languageService.direction() === 'rtl' ? 'justify-start md:justify-center pl-4 md:pl-0' : 'justify-end md:justify-center pr-4 md:pr-0')" style="animation-delay: 0.4s;">
           <app-button
             variant="outline"
             size="md"

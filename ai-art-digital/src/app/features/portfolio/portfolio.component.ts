@@ -2,7 +2,6 @@ import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
-import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 
 interface PortfolioItem {
   id: string;
@@ -16,20 +15,13 @@ interface PortfolioItem {
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule],
   template: `
     <section *ngIf="configService.isFeatureEnabled('showPortfolio')" id="portfolio" class="py-20 bg-white dark:bg-gradient-to-br dark:from-midnight-900 dark:via-midnight-850 dark:to-midnight-800 overflow-hidden">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <app-section-header
-          [title]="sectionTitle()"
-          [subtitle]="sectionSubtitle()"
-          [centered]="true"
-          size="lg">
-        </app-section-header>
-
         <!-- Auto-Scrolling Carousel -->
-        <div class="mt-16 relative">
+        <div class="relative">
           <!-- Gradient Overlays for fade effect -->
           <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-midnight-900 to-transparent z-10 pointer-events-none"></div>
           <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-midnight-900 to-transparent z-10 pointer-events-none"></div>
@@ -54,25 +46,7 @@ interface PortfolioItem {
                     <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div class="absolute bottom-4 left-4 right-4">
-                        <h4 class="text-white font-bold text-lg mb-2">{{ languageService.getTranslation(item.title) }}</h4>
-                        <div class="flex flex-wrap gap-1">
-                          <span *ngFor="let tag of item.tags"
-                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
-                            {{ tag }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <!-- Category Badge -->
-                    <div class="absolute top-4 right-4">
-                      <span class="px-3 py-1 bg-primary-500 dark:bg-violet-500 text-white text-xs font-semibold rounded-full">
-                        {{ languageService.getTranslation(item.category) }}
-                      </span>
-                    </div>
                   </div>
 
                 </div>
@@ -86,25 +60,7 @@ interface PortfolioItem {
                     <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div class="absolute bottom-4 left-4 right-4">
-                        <h4 class="text-white font-bold text-lg mb-2">{{ languageService.getTranslation(item.title) }}</h4>
-                        <div class="flex flex-wrap gap-1">
-                          <span *ngFor="let tag of item.tags"
-                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
-                            {{ tag }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <!-- Category Badge -->
-                    <div class="absolute top-4 right-4">
-                      <span class="px-3 py-1 bg-primary-500 dark:bg-violet-500 text-white text-xs font-semibold rounded-full">
-                        {{ languageService.getTranslation(item.category) }}
-                      </span>
-                    </div>
                   </div>
 
                 </div>
@@ -118,25 +74,7 @@ interface PortfolioItem {
                     <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
 
-                    <!-- Hover Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div class="absolute bottom-4 left-4 right-4">
-                        <h4 class="text-white font-bold text-lg mb-2">{{ languageService.getTranslation(item.title) }}</h4>
-                        <div class="flex flex-wrap gap-1">
-                          <span *ngFor="let tag of item.tags"
-                                class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-xs rounded-full">
-                            {{ tag }}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
 
-                    <!-- Category Badge -->
-                    <div class="absolute top-4 right-4">
-                      <span class="px-3 py-1 bg-primary-500 dark:bg-violet-500 text-white text-xs font-semibold rounded-full">
-                        {{ languageService.getTranslation(item.category) }}
-                      </span>
-                    </div>
                   </div>
 
                 </div>

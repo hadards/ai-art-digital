@@ -1,25 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../language.service';
-import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 
 @Component({
   selector: 'app-showcase',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule],
   template: `
     <section class="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-midnight-900 dark:to-midnight-850">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <app-section-header
-          [title]="sectionTitle()"
-          [subtitle]="sectionSubtitle()"
-          [centered]="true"
-          size="lg">
-        </app-section-header>
-
         <!-- Featured Showcase Grid -->
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- Large Featured Item -->
           <div class="lg:col-span-2 lg:row-span-2 group">
             <div class="relative h-96 lg:h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl overflow-hidden shadow-2xl">
