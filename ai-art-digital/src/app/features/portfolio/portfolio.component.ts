@@ -130,11 +130,11 @@ export class PortfolioComponent {
     },
     {
       id: '4',
-      title: { he: 'אמנות מופשטת צבעונית', en: 'Colorful Abstract Art' },
+      title: { he: 'יצירה דיגיטלית', en: 'Digital Creation' },
       category: { he: 'אמנות מופשטת', en: 'Abstract Art' },
-      description: { he: 'יצירה מופשטת עם צבעים חיים וצורות דינמיות', en: 'Abstract creation with vibrant colors and dynamic shapes' },
-      image: '/assets/images/11.jpg',
-      tags: ['Abstract', 'Colorful', 'Modern']
+      description: { he: 'יצירה דיגיטלית ייחודית', en: 'Unique digital creation' },
+      image: '/assets/images/16.PNG',
+      tags: ['Digital Art', 'Creative', 'Modern']
     },
     {
       id: '5',
@@ -183,6 +183,30 @@ export class PortfolioComponent {
       description: { he: 'לוחם עתידני עם שריון מתקדם ונשק היי-טק', en: 'Futuristic warrior with advanced armor and hi-tech weapons' },
       image: '/assets/images/9.jpg',
       tags: ['Character', 'Sci-Fi', 'Warrior']
+    },
+    {
+      id: '11',
+      title: { he: 'עיצוב אומנותי', en: 'Artistic Design' },
+      category: { he: 'אמנות מופשטת', en: 'Abstract Art' },
+      description: { he: 'עיצוב אומנותי מרהיב', en: 'Stunning artistic design' },
+      image: '/assets/images/17.PNG',
+      tags: ['Art', 'Design', 'Creative']
+    },
+    {
+      id: '12',
+      title: { he: 'יצירה ויזואלית', en: 'Visual Creation' },
+      category: { he: 'נופים', en: 'Landscapes' },
+      description: { he: 'יצירה ויזואלית ייחודית', en: 'Unique visual creation' },
+      image: '/assets/images/18.PNG',
+      tags: ['Visual', 'Creative', 'Art']
+    },
+    {
+      id: '13',
+      title: { he: 'אמנות דיגיטלית', en: 'Digital Art' },
+      category: { he: 'פורטרטים', en: 'Portraits' },
+      description: { he: 'אמנות דיגיטלית מתקדמת', en: 'Advanced digital art' },
+      image: '/assets/images/19.PNG',
+      tags: ['Digital', 'Modern', 'Art']
     }
   ];
 

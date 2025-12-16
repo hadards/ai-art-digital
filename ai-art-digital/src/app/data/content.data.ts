@@ -141,6 +141,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       ]
     },
     gallery: [
+      '/assets/images/IMG_8832.PNG',
       '/assets/images/family info.png',
       '/assets/images/IMG_5713.jpg'
     ]
