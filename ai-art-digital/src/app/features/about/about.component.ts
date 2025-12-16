@@ -104,7 +104,7 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
             <!-- Content -->
             <div class="relative p-12">
               <!-- Highlights -->
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="grid grid-cols-3 gap-4">
                 <div *ngFor="let benefit of benefits; let i = index"
                      class="group relative p-4 rounded-xl bg-white dark:bg-slate-800/40 border border-slate-200 dark:border-violet-500/20 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <div class="flex flex-col items-center text-center">
