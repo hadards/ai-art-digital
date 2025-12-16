@@ -114,7 +114,7 @@ import { LanguageService } from '../../language.service';
             <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
               <p class="text-slate-700 dark:text-slate-300">
                 <strong>{{ emailLabel() }}:</strong> hadards@gmail.com<br>
-                <strong>{{ whatsappLabel() }}:</strong> 052-277-0881
+                <strong>{{ whatsappLabel() }}:</strong> +972-52-277-0881
               </p>
             </div>
           </section>

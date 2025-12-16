@@ -2,6 +2,7 @@ import { Component, inject, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LanguageService } from '../../language.service';
+import { ConfigService } from '../../config.service';
 import { SectionHeaderComponent } from '../../components/section-header/section-header.component';
 import { WhatsAppUtil } from '../../utils/whatsapp.util';
 import { SERVICES_DATA } from '../../data/content.data';
@@ -301,6 +302,7 @@ import { ServiceItem } from '../../models/service.model';
 export class ServicesComponent implements OnDestroy {
 
   protected readonly languageService = inject(LanguageService);
+  protected readonly configService = inject(ConfigService);
   protected readonly services: readonly ServiceItem[] = SERVICES_DATA;
   private sanitizer = inject(DomSanitizer);
 
@@ -400,11 +402,32 @@ export class ServicesComponent implements OnDestroy {
   }
 
   onServiceClick(service: ServiceItem): void {
-    console.log('Service click:', service.id);
+    const config = this.configService.getConfig();
+    const serviceName = this.languageService.getTranslation(service.title);
+
+    const url = WhatsAppUtil.generateWhatsAppUrl(config.whatsappNumber, {
+      language: this.languageService.language(),
+      customMessage: this.languageService.getTranslation({
+        he: `שלום! אני מעוניין/ת בשירות "${serviceName}". אשמח לקבל פרטים נוספים.`,
+        en: `Hello! I'm interested in the "${serviceName}" service. I'd love to hear more details.`
+      })
+    });
+
+    window.open(url, '_blank');
   }
 
   onCustomProjectClick(): void {
-    console.log('Custom project WhatsApp click');
+    const config = this.configService.getConfig();
+
+    const url = WhatsAppUtil.generateWhatsAppUrl(config.whatsappNumber, {
+      language: this.languageService.language(),
+      customMessage: this.languageService.getTranslation({
+        he: 'שלום! יש לי רעיון לפרויקט מיוחד. בוא נדבר על זה!',
+        en: 'Hello! I have an idea for a special project. Let\'s discuss it!'
+      })
+    });
+
+    window.open(url, '_blank');
   }
 
   getSafePdfUrl(url: string): SafeResourceUrl {

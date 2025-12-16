@@ -79,7 +79,9 @@ export class App {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.isHomePage = event.url === '/' || event.url === '';
+      // Consider home page as root path or root path with hash fragments
+      const url = event.url;
+      this.isHomePage = url === '/' || url === '' || url.startsWith('/#');
     });
   }
 }

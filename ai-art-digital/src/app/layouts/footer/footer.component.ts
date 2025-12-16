@@ -183,8 +183,8 @@ export class FooterComponent {
 
   whatsappText(): string {
     return this.languageService.getTranslation({
-      he: 'וואטסאפ (זמין 24/7)',
-      en: 'WhatsApp (Available 24/7)'
+      he: 'וואטסאפ',
+      en: 'WhatsApp'
     });
   }
 
