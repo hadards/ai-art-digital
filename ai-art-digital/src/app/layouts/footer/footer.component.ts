@@ -144,7 +144,7 @@ export class FooterComponent {
   brandDescription(): string {
     return this.languageService.getTranslation({
       he: 'סטודיו עיצוב דיגיטלי מתקדם המשתמש ב-Generative AI ליצירת עיצובים אומנותיים ודפי נחיתה מתקדמים.',
-      en: 'Advanced digital design studio using Generative AI, Computer Vision and Neural Networks to create artistic designs and advanced landing pages.'
+      en: 'Advanced digital design studio using Generative AI to create artistic designs and advanced landing pages.'
     });
   }
 

@@ -64,7 +64,7 @@ import { ThemeToggleComponent } from '../../components/theme-toggle/theme-toggle
           <div [class]="mobileNavClasses">
             <a *ngFor="let item of navigationItems()"
                [href]="'#' + item.anchor"
-               (click)="closeMobileMenu()"
+               (click)="onMobileMenuItemClick($event, item.anchor)"
                class="block text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 px-3 py-3 text-base font-medium hover:bg-slate-100 dark:hover:bg-violet-500/10 rounded-md transition-colors">
               {{ item.label }}
             </a>
@@ -144,6 +144,17 @@ export class HeaderComponent {
 
   closeMobileMenu(): void {
     this.mobileMenuOpen = false;
+  }
+
+  onMobileMenuItemClick(event: Event, anchor: string): void {
+    event.preventDefault();
+    this.closeMobileMenu();
+    setTimeout(() => {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   }
 
   mobileMenuAriaLabel(): string {
