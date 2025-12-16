@@ -161,7 +161,6 @@ export class FooterComponent {
         { label: 'שירותים', anchor: 'services' },
         { label: 'אודותיי', anchor: 'about' },
         { label: 'תיק עבודות', anchor: 'portfolio' },
-        { label: 'משאבים', anchor: 'resources' },
         { label: 'מאמרים', anchor: 'articles' },
         { label: 'צור קשר', anchor: 'contact' }
       ],
@@ -169,7 +168,6 @@ export class FooterComponent {
         { label: 'Services', anchor: 'services' },
         { label: 'About', anchor: 'about' },
         { label: 'Portfolio', anchor: 'portfolio' },
-        { label: 'Resources', anchor: 'resources' },
         { label: 'Articles', anchor: 'articles' },
         { label: 'Contact', anchor: 'contact' }
       ]

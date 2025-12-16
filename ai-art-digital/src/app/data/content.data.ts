@@ -2,6 +2,69 @@ import { ContentSection, ServiceItem } from '../models/service.model';
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
+    id: 'educational-materials',
+    title: {
+      he: 'חומרי הדרכה ומדריכים',
+      en: 'Educational Materials & Guides'
+    },
+    description: {
+      he: 'מדריכים מקצועיים וחומרי הדרכה מותאמים אישית',
+      en: 'Professional guides and custom educational materials'
+    },
+    priceRange: {
+      min: 0,
+      max: 0,
+      currency: '₪'
+    },
+    deliveryTime: {
+      he: 'X',
+      en: 'X'
+    },
+    includes: {
+      he: [
+        'עיצוב מקצועי',
+        'תוכן מותאם אישית',
+        'קבצים להדפסה',
+        'גרסה דיגיטלית',
+        'עד 3 תיקונים'
+      ],
+      en: [
+        'Professional design',
+        'Custom content',
+        'Print-ready files',
+        'Digital version',
+        'Up to 3 revisions'
+      ]
+    },
+    featured: true,
+    manuals: [
+      {
+        title: {
+          he: 'מצגת AI לכיתה ו',
+          en: 'AI Presentation for 6th Grade'
+        },
+        description: {
+          he: 'מצגת חינוכית מקיפה המציגה את עולם ה-AI לתלמידי כיתה ו',
+          en: 'Comprehensive educational presentation introducing AI to 6th grade students'
+        },
+        url: '/assets/manuals/מצגת AI לכיתה ו.pdf',
+        type: 'pdf'
+      },
+      {
+        title: {
+          he: 'מדריך PowerPoint ב-Canva',
+          en: 'PowerPoint in Canva Guide'
+        },
+        description: {
+          he: 'מדריך מפורט ליצירת מצגות PowerPoint מקצועיות באמצעות Canva',
+          en: 'Detailed guide for creating professional PowerPoint presentations using Canva'
+        },
+        url: '/assets/manuals/Power point in Canva manual.png',
+        type: 'image'
+      }
+    ]
+  },
+  {
     id: 'landing-page',
     title: {
       he: 'עמוד נחיתה מקצועי',
@@ -12,13 +75,13 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Fast custom website focused on conversions'
     },
     priceRange: {
-      min: 1200,
-      max: 2000,
+      min: 0,
+      max: 0,
       currency: '₪'
     },
     deliveryTime: {
-      he: '5-7 ימים',
-      en: '5-7 days'
+      he: 'X',
+      en: 'X'
     },
     includes: {
       he: [
@@ -43,6 +106,46 @@ export const SERVICES_DATA: ServiceItem[] = [
     }
   },
   {
+    id: 'custom-comic',
+    title: {
+      he: 'ספר/קומיקס מותאם אישית',
+      en: 'Personalized Comic/Storybook'
+    },
+    description: {
+      he: 'סיפור מאויר עם הדמויות שלכם כגיבורים',
+      en: 'Illustrated story with your characters as heroes'
+    },
+    priceRange: {
+      min: 0,
+      max: 0,
+      currency: '₪'
+    },
+    deliveryTime: {
+      he: 'X',
+      en: 'X'
+    },
+    includes: {
+      he: [
+        'עד 20 תמונות',
+        'הדמיה של הדמויות',
+        'עלילה מותאמת אישית',
+        'איורים מקצועיים',
+        'קובץ PDF איכותי'
+      ],
+      en: [
+        'Up to 20 images',
+        'Character illustrations',
+        'Custom storyline',
+        'Professional illustrations',
+        'High-quality PDF file'
+      ]
+    },
+    gallery: [
+      '/assets/images/family info.png',
+      '/assets/images/IMG_5713.jpg'
+    ]
+  },
+  {
     id: 'event-invitation',
     title: {
       he: 'עיצוב הזמנות לאירועים',
@@ -53,13 +156,13 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Unique designed invitations for special events'
     },
     priceRange: {
-      min: 300,
-      max: 800,
+      min: 0,
+      max: 0,
       currency: '₪'
     },
     deliveryTime: {
-      he: '3-5 ימים',
-      en: '3-5 days'
+      he: 'X',
+      en: 'X'
     },
     includes: {
       he: [
@@ -93,13 +196,13 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Professional recognizable logo for your brand'
     },
     priceRange: {
-      min: 400,
-      max: 1000,
+      min: 0,
+      max: 0,
       currency: '₪'
     },
     deliveryTime: {
-      he: '3-5 ימים',
-      en: '3-5 days'
+      he: 'X',
+      en: 'X'
     },
     includes: {
       he: [
@@ -124,46 +227,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
-    id: 'custom-comic',
-    title: {
-      he: 'ספר/קומיקס מותאם אישית',
-      en: 'Personalized Comic/Storybook'
-    },
-    description: {
-      he: 'סיפור מאויר עם הדמויות שלכם כגיבורים',
-      en: 'Illustrated story with your characters as heroes'
-    },
-    priceRange: {
-      min: 500,
-      max: 1200,
-      currency: '₪'
-    },
-    deliveryTime: {
-      he: '7-10 ימים',
-      en: '7-10 days'
-    },
-    includes: {
-      he: [
-        'עד 20 תמונות',
-        'הדמיה של הדמויות',
-        'עלילה מותאמת אישית',
-        'איורים מקצועיים',
-        'קובץ PDF איכותי'
-      ],
-      en: [
-        'Up to 20 images',
-        'Character illustrations',
-        'Custom storyline',
-        'Professional illustrations',
-        'High-quality PDF file'
-      ]
-    },
-    media: {
-      type: 'image',
-      url: '/assets/images/4.jpg'
-    }
-  },
-  {
     id: 'baby-story',
     title: {
       he: 'סיפור גדילה של תינוק',
@@ -174,13 +237,13 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Digital album of the first year'
     },
     priceRange: {
-      min: 600,
-      max: 1200,
+      min: 0,
+      max: 0,
       currency: '₪'
     },
     deliveryTime: {
-      he: '5-7 ימים',
-      en: '5-7 days'
+      he: 'X',
+      en: 'X'
     },
     includes: {
       he: [
@@ -201,46 +264,6 @@ export const SERVICES_DATA: ServiceItem[] = [
     gallery: [
       '/assets/images/sample2.png'
     ]
-  },
-  {
-    id: 'presentation',
-    title: {
-      he: 'עיצוב מצגת מותאם',
-      en: 'Custom Presentation Design'
-    },
-    description: {
-      he: 'מצגות PowerPoint מקצועיות',
-      en: 'Professional PowerPoint presentations'
-    },
-    priceRange: {
-      min: 400,
-      max: 800,
-      currency: '₪'
-    },
-    deliveryTime: {
-      he: '3-5 ימים',
-      en: '3-5 days'
-    },
-    includes: {
-      he: [
-        'עד 20 שקפים',
-        'עיצוב מקצועי',
-        'תבניות לשימוש עתידי',
-        'אנימציות',
-        'קובץ PowerPoint'
-      ],
-      en: [
-        'Up to 20 slides',
-        'Professional design',
-        'Templates for future use',
-        'Animations',
-        'PowerPoint file'
-      ]
-    },
-    media: {
-      type: 'video',
-      url: '/assets/videos/Recording lawyer office.mp4'
-    }
   }
 ];
 

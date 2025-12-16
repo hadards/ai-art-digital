@@ -27,7 +27,14 @@ export interface ServiceItem {
     url: string;
     thumbnail?: string;
   };
-  gallery?: string[]; // For multiple images display
+  gallery?: string[];
+  manuals?: Array<{
+    title: { he: string; en: string };
+    description: { he: string; en: string };
+    url: string;
+    type: 'pdf' | 'image';
+    thumbnail?: string;
+  }>;
 }
 
 export interface ArticleItem {
