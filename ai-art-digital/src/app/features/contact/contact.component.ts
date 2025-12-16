@@ -56,7 +56,7 @@ import { ButtonComponent } from '../../components/button/button.component';
             </div>
 
             <!-- Contact Methods -->
-            <div class="flex flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <!-- WhatsApp Button -->
               <app-button
                 variant="whatsapp"
