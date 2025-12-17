@@ -151,7 +151,7 @@ export class AboutComponent {
   protected readonly aboutContent = CONTENT_DATA.about;
   protected readonly benefits = CONTENT_DATA.benefits;
   protected readonly stats = CONTENT_DATA.stats;
-  protected readonly techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'AI Tools', 'Canva', 'CapCut'] as const;
+  protected readonly techStack = ['Python', 'Angular', 'Node.js', 'Databricks', 'Power Platform', 'AI Tools', 'Canva', 'CapCut'] as const;
 
   // Layout order for RTL/LTR
   get contentOrder(): string {

@@ -207,6 +207,22 @@ export class PortfolioComponent {
       description: { he: 'אמנות דיגיטלית מתקדמת', en: 'Advanced digital art' },
       image: '/assets/images/19.PNG',
       tags: ['Digital', 'Modern', 'Art']
+    },
+    {
+      id: '14',
+      title: { he: 'יצירה ייחודית', en: 'Unique Creation' },
+      category: { he: 'אמנות מופשטת', en: 'Abstract Art' },
+      description: { he: 'יצירה אומנותית ייחודית', en: 'Unique artistic creation' },
+      image: '/assets/images/20.PNG',
+      tags: ['Creative', 'Art', 'Unique']
+    },
+    {
+      id: '15',
+      title: { he: 'עיצוב מודרני', en: 'Modern Design' },
+      category: { he: 'נופים', en: 'Landscapes' },
+      description: { he: 'עיצוב מודרני ומרשים', en: 'Modern and impressive design' },
+      image: '/assets/images/21.PNG',
+      tags: ['Modern', 'Design', 'Creative']
     }
   ];
 

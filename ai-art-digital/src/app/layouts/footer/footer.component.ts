@@ -182,10 +182,11 @@ export class FooterComponent {
   }
 
   whatsappText(): string {
-    return this.languageService.getTranslation({
-      he: 'וואטסאפ',
-      en: 'WhatsApp'
-    });
+    const config = this.configService.getConfig();
+    const phoneNumber = config.whatsappNumber;
+    // Format as +972-52-277-0881
+    const formatted = `+${phoneNumber.slice(0, 3)}-${phoneNumber.slice(3, 5)}-${phoneNumber.slice(5, 8)}-${phoneNumber.slice(8)}`;
+    return formatted;
   }
 
   emailDisplayText(): string {

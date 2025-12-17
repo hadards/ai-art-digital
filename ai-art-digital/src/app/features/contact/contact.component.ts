@@ -49,12 +49,6 @@ import { ButtonComponent } from '../../components/button/button.component';
         <div class="mt-16 text-center">
           <div class="max-w-2xl mx-auto">
 
-            <!-- Contact Info -->
-            <div class="text-slate-700 dark:text-slate-300 mb-12">
-              <p class="text-lg">{{ responseTimeText() }}</p>
-              <p class="text-sm">{{ workingHoursText() }}</p>
-            </div>
-
             <!-- Contact Methods -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <!-- WhatsApp Button -->
@@ -118,7 +112,7 @@ export class ContactComponent {
 
   sectionSubtitle(): string {
     return this.languageService.getTranslation({
-      he: 'שלח לי הודעה ונתחיל לעבוד יחד על הרעיון שלך. התקשורת פשוטה, המחירים שקופים, והתוצאות מדברות בעד עצמן.',
+      he: 'שלחו לי הודעה ונתחיל לעבוד יחד על הרעיון שלכם. התקשורת פשוטה, המחירים שקופים, והתוצאות מדברות בעד עצמן.',
       en: 'Send me a message and let\'s start working together on your idea. Communication is simple, prices are transparent, and the results speak for themselves.'
     });
   }
@@ -127,20 +121,6 @@ export class ContactComponent {
     return this.languageService.getTranslation({
       he: 'שלח הודעה בוואטסאפ עכשיו',
       en: 'Send WhatsApp Message Now'
-    });
-  }
-
-  responseTimeText(): string {
-    return this.languageService.getTranslation({
-      he: 'זמן מענה: עד 24 שעות',
-      en: 'Response time: Up to 24 hours'
-    });
-  }
-
-  workingHoursText(): string {
-    return this.languageService.getTranslation({
-      he: 'עונה בימים א\'-ו\', 09:00-18:00',
-      en: 'Available Sun-Thu, 09:00-18:00'
     });
   }
 

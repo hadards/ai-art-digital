@@ -71,8 +71,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Professional Landing Page'
     },
     description: {
-      he: 'אתר מותאם אישית מהיר וממוקד המרות',
-      en: 'Fast custom website focused on conversions'
+      he: 'אתר עסקי, דף נחיתה מקצועי ומעוצב. תקבלו את הקוד המלא בבעלות מלאה, והאתר יועלה בחינם לרשת',
+      en: 'Fast custom website. You receive the complete code with full ownership, and the site is deployed online for free'
     },
     priceRange: {
       min: 0,
@@ -112,8 +112,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Personalized Comic/Storybook'
     },
     description: {
-      he: 'סיפור מאויר עם הדמויות שלכם כגיבורים',
-      en: 'Illustrated story with your characters as heroes'
+      he: 'סיפור מאויר עם הדמויות שלכם כגיבורים, או כמתנה מקורית למישהו קרוב',
+      en: 'Illustrated story with your characters as heroes, or as an original gift for someone close'
     },
     priceRange: {
       min: 0,
@@ -193,8 +193,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Logo Design'
     },
     description: {
-      he: 'לוגו מקצועי ומזוהה למותג שלך',
-      en: 'Professional recognizable logo for your brand'
+      he: 'לוגו מקצועי ומזוהה למותג שלך מעוצב באמצעות כלי AI מתקדמים ותוכנות עריכה',
+      en: 'Professional recognizable logo for your brand designed using advanced AI tools and editing software'
     },
     priceRange: {
       min: 0,
@@ -234,8 +234,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       en: 'Baby Growth Story'
     },
     description: {
-      he: 'אלבום דיגיטלי של השנה הראשונה',
-      en: 'Digital album of the first year'
+      he: 'תמונה דיגיטלית של השנה הראשונה - סיפור התפתחות של התינוק שלכם מתועד בצורה מיוחדת עם כל הרגעים המרגשים',
+      en: 'Digital image of the first year - your baby\'s development story documented in a special way with all the exciting moments'
     },
     priceRange: {
       min: 0,
