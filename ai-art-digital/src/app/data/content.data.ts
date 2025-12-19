@@ -61,6 +61,30 @@ export const SERVICES_DATA: ServiceItem[] = [
         },
         url: '/assets/manuals/Power point in Canva manual.png',
         type: 'image'
+      },
+      {
+        title: {
+          he: 'Excel Databricks Flow Automation',
+          en: 'Excel Databricks Flow Automation'
+        },
+        description: {
+          he: 'אוטומציה של זרימת עבודה בין Excel ל-Databricks',
+          en: 'Workflow automation between Excel and Databricks'
+        },
+        url: '/assets/manuals/Excel Databricks Flow Automation.png',
+        type: 'image'
+      },
+      {
+        title: {
+          he: 'CoPilot Agent on Teams',
+          en: 'CoPilot Agent on Teams'
+        },
+        description: {
+          he: 'מדריך להטמעת CoPilot Agent ב-Microsoft Teams',
+          en: 'Guide for implementing CoPilot Agent in Microsoft Teams'
+        },
+        url: '/assets/manuals/CoPilot Agent on Teams.png',
+        type: 'image'
       }
     ]
   },
