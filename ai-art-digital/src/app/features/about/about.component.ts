@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
 import { CONTENT_DATA } from '../../data/content.data';
@@ -17,7 +17,7 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   template: `
     <section *ngIf="configService.isFeatureEnabled('showAboutMe')" id="about" class="relative py-12 bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/30 dark:to-midnight-900 overflow-hidden">
 
@@ -29,7 +29,7 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
         <!-- Floating Images - Your Creations - Artistic Collage Style -->
         <div [class]="'absolute top-0 w-56 sm:w-72 lg:w-96 aspect-square opacity-25 dark:opacity-20 animate-float -rotate-12 hover:rotate-0 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -2s;">
           <div class="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/50 dark:border-violet-400/30">
-            <img src="/assets/images/4.jpg" class="w-full h-full object-cover mix-blend-luminosity dark:mix-blend-normal" alt="Creation">
+            <img ngSrc="/assets/images/4.jpg" fill priority class="object-cover mix-blend-luminosity dark:mix-blend-normal" alt="Creation">
           </div>
           <div [class]="'absolute -top-2 w-6 h-6 bg-primary-400 dark:bg-violet-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? '-right-2' : '-left-2')"></div>
           <div [class]="'absolute -bottom-2 w-5 h-5 bg-accent-400 dark:bg-emerald-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? '-left-2' : '-right-2')" style="animation-delay: 0.5s;"></div>
@@ -79,7 +79,7 @@ const DEFAULT_BENEFIT_ICON = '/assets/icons/IMG_8877-removebg-preview.png';
 
                 <!-- Profile Image -->
                 <div class="relative bg-slate-200 rounded-3xl overflow-hidden aspect-square shadow-2xl max-w-sm mx-auto">
-                  <img src="/assets/images/profile.jpg" alt="Profile" class="w-full h-full object-cover" />
+                  <img ngSrc="/assets/images/profile.jpg" alt="Profile" fill class="object-cover" />
                 </div>
 
                 <!-- Floating Elements -->

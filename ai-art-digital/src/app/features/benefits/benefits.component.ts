@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { CONTENT_DATA } from '../../data/content.data';
 
 @Component({
   selector: 'app-benefits',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   template: `
     <section class="relative py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/30 dark:to-midnight-900 overflow-hidden">
 
@@ -20,7 +20,7 @@ import { CONTENT_DATA } from '../../data/content.data';
         <!-- Circular image with artistic border - LARGER -->
         <div [class]="'absolute top-0 w-56 sm:w-72 lg:w-96 aspect-square opacity-25 dark:opacity-20 animate-float -rotate-12 hover:rotate-0 transition-all duration-700 ' + (languageService.direction() === 'rtl' ? 'left-8' : 'right-8')" style="animation-delay: -2s;">
           <div class="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white/50 dark:border-violet-400/30">
-            <img src="/assets/images/4.jpg" class="w-full h-full object-cover mix-blend-luminosity dark:mix-blend-normal" alt="Creation">
+            <img ngSrc="/assets/images/4.jpg" fill priority class="object-cover mix-blend-luminosity dark:mix-blend-normal" alt="Creation">
           </div>
           <!-- Decorative dots -->
           <div [class]="'absolute -top-2 w-6 h-6 bg-primary-400 dark:bg-violet-400 rounded-full animate-pulse ' + (languageService.direction() === 'rtl' ? '-right-2' : '-left-2')"></div>

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
 import { WhatsAppUtil } from '../../utils/whatsapp.util';
@@ -9,7 +9,7 @@ import { ButtonComponent } from '../../components/button/button.component';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent, ButtonComponent],
+  imports: [CommonModule, SectionHeaderComponent, ButtonComponent, NgOptimizedImage],
   template: `
     <section id="contact" class="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-midnight-950 dark:to-midnight-900 text-slate-900 dark:text-white relative overflow-hidden">
 
@@ -27,8 +27,8 @@ import { ButtonComponent } from '../../components/button/button.component';
             <div class="absolute -top-3 left-1/4 w-20 h-8 bg-amber-100/60 dark:bg-amber-200/40 -rotate-6 z-10 shadow-sm"></div>
             <div class="absolute -top-3 right-1/4 w-20 h-8 bg-amber-100/60 dark:bg-amber-200/40 rotate-6 z-10 shadow-sm"></div>
             <div class="bg-white dark:bg-slate-200 p-4 shadow-2xl">
-              <div class="aspect-[16/9] overflow-hidden">
-                <img src="/assets/images/family background.png" class="w-full h-full object-cover grayscale-[30%] dark:grayscale-0 contrast-110" alt="Creation">
+              <div class="relative aspect-[16/9] overflow-hidden">
+                <img ngSrc="/assets/images/family-background.png" fill class="object-cover grayscale-[30%] dark:grayscale-0 contrast-110" alt="Creation">
               </div>
             </div>
           </div>

@@ -59,7 +59,7 @@ export const SERVICES_DATA: ServiceItem[] = [
           he: 'מדריך פשוט ליצירת מצגות PowerPoint מקצועיות באמצעות Gemini',
           en: 'Simple guide for creating professional PowerPoint presentations using Gemini'
         },
-        url: '/assets/manuals/Power point in Canva manual.png',
+        url: '/assets/manuals/Power-point-in-Canva-manual.png',
         type: 'image'
       },
       {
@@ -71,7 +71,7 @@ export const SERVICES_DATA: ServiceItem[] = [
           he: 'אוטומציה של זרימת עבודה בין Excel ל-Databricks',
           en: 'Workflow automation between Excel and Databricks'
         },
-        url: '/assets/manuals/Excel Databricks Flow Automation.png',
+        url: '/assets/manuals/Excel-Databricks-Flow-Automation.png',
         type: 'image'
       },
       {
@@ -83,7 +83,7 @@ export const SERVICES_DATA: ServiceItem[] = [
           he: 'מדריך להטמעת CoPilot Agent ב-Microsoft Teams',
           en: 'Guide for implementing CoPilot Agent in Microsoft Teams'
         },
-        url: '/assets/manuals/CoPilot Agent on Teams.png',
+        url: '/assets/manuals/CoPilot-Agent-on-Teams.png',
         type: 'image'
       }
     ]
@@ -126,7 +126,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     featured: true,
     media: {
       type: 'video',
-      url: '/assets/videos/Recording real estate landing page.mp4'
+      url: '/assets/videos/Recording-real-estate-landing-page.mp4'
     }
   },
   {
@@ -166,7 +166,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     },
     gallery: [
       '/assets/images/IMG_8832.PNG',
-      '/assets/images/family info.png',
+      '/assets/images/family-info.png',
       '/assets/images/IMG_5713.jpg'
     ]
   },

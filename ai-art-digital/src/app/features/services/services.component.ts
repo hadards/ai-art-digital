@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
@@ -11,7 +11,7 @@ import { ServiceItem } from '../../models/service.model';
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, SectionHeaderComponent],
+  imports: [CommonModule, SectionHeaderComponent, NgOptimizedImage],
   template: `
     <section id="services" class="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:bg-gradient-to-br dark:from-midnight-900 dark:via-midnight-800 dark:to-midnight-700 overflow-hidden">
 
@@ -95,9 +95,11 @@ import { ServiceItem } from '../../models/service.model';
                            [class]="'absolute inset-0 transition-opacity duration-700 ease-in-out ' +
                                     (getActiveSlide(service.id) === imgIndex ? 'opacity-100 z-10' : 'opacity-0 z-0')">
                         <img
-                          [src]="imageUrl"
+                          [ngSrc]="imageUrl"
                           [alt]="languageService.getTranslation(service.title) + ' ' + (imgIndex + 1)"
-                          class="w-full h-full object-contain">
+                          fill
+                          class="object-contain"
+                          [priority]="imgIndex === 0">
                       </div>
 
                       <!-- Gradient Overlay -->
@@ -148,7 +150,7 @@ import { ServiceItem } from '../../models/service.model';
                         </div>
                         <!-- Show thumbnail on mobile -->
                         <div class="md:hidden absolute inset-0">
-                          <img *ngIf="manual.thumbnail" [src]="manual.thumbnail" [alt]="languageService.getTranslation(manual.title)" class="w-full h-full object-cover">
+                          <img *ngIf="manual.thumbnail" [ngSrc]="manual.thumbnail" [alt]="languageService.getTranslation(manual.title)" fill class="object-cover">
                           <div *ngIf="!manual.thumbnail" class="absolute inset-0 flex flex-col items-center justify-center">
                             <svg class="w-20 h-20 text-red-500 mb-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
@@ -161,7 +163,7 @@ import { ServiceItem } from '../../models/service.model';
                       </div>
 
                       <!-- Image Preview -->
-                      <img *ngIf="manual.type === 'image'" [src]="manual.url" [alt]="languageService.getTranslation(manual.title)" class="w-full h-full object-cover">
+                      <img *ngIf="manual.type === 'image'" [ngSrc]="manual.url" [alt]="languageService.getTranslation(manual.title)" fill class="object-cover">
 
                       <!-- Hover/Click Overlay -->
                       <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent opacity-0 group-hover/manual:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
@@ -227,11 +229,12 @@ import { ServiceItem } from '../../models/service.model';
                   </div>
 
                   <!-- Image -->
-                  <div *ngIf="service.media.type === 'image'" class="aspect-video bg-slate-200 dark:bg-slate-800">
+                  <div *ngIf="service.media.type === 'image'" class="relative aspect-video bg-slate-200 dark:bg-slate-800">
                     <img
-                      [src]="service.media.url"
+                      [ngSrc]="service.media.url"
                       [alt]="languageService.getTranslation(service.title)"
-                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                      fill
+                      class="object-cover group-hover:scale-105 transition-transform duration-700">
                   </div>
 
                   <!-- Featured Badge -->

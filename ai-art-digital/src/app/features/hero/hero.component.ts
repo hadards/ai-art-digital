@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
 import { CONTENT_DATA } from '../../data/content.data';
@@ -9,7 +9,7 @@ import { ButtonComponent } from '../../components/button/button.component';
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, NgOptimizedImage],
   template: `
     <section class="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-primary-50 dark:bg-gradient-to-br dark:from-midnight-950 dark:via-violet-950/50 dark:to-midnight-900 overflow-hidden">
 
@@ -28,8 +28,8 @@ import { ButtonComponent } from '../../components/button/button.component';
 
         <!-- Hadar bike image -->
         <div class="absolute" [class]="languageService.direction() === 'rtl' ? 'left-24 lg:left-32' : 'right-4 md:right-24 lg:right-32'" style="top: 240px">
-          <div class="w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 float-horizontal transition-all duration-700">
-            <img src="/assets/images/hadar-bike.png" class="w-full h-full object-cover" alt="Hadar">
+          <div class="relative w-32 lg:w-40 aspect-square opacity-22 dark:opacity-18 float-horizontal transition-all duration-700">
+            <img ngSrc="/assets/images/hadar-bike.png" fill priority class="object-cover" alt="Hadar">
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 import { Component, inject, ViewChild, ElementRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { LanguageService } from '../../language.service';
 import { ConfigService } from '../../config.service';
 
@@ -15,7 +15,7 @@ interface PortfolioItem {
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgOptimizedImage],
   template: `
     <section *ngIf="configService.isFeatureEnabled('showPortfolio')" id="portfolio" class="py-20 bg-white dark:bg-gradient-to-br dark:from-midnight-900 dark:via-midnight-850 dark:to-midnight-800 overflow-hidden">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,8 +43,9 @@ interface PortfolioItem {
                 <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-200 dark:border-violet-500/20">
                   <!-- Image Container -->
                   <div [class]="'relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden ' + (i % 4 === 3 ? 'aspect-video' : 'aspect-[3/4]')">
-                    <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img [ngSrc]="item.image" [alt]="languageService.getTranslation(item.title)"
+                         fill
+                         class="object-cover group-hover:scale-110 transition-transform duration-700" />
 
 
                   </div>
@@ -57,8 +58,9 @@ interface PortfolioItem {
                 <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-200 dark:border-violet-500/20">
                   <!-- Image Container -->
                   <div [class]="'relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden ' + (i % 4 === 3 ? 'aspect-video' : 'aspect-[3/4]')">
-                    <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img [ngSrc]="item.image" [alt]="languageService.getTranslation(item.title)"
+                         fill
+                         class="object-cover group-hover:scale-110 transition-transform duration-700" />
 
 
                   </div>
@@ -71,8 +73,9 @@ interface PortfolioItem {
                 <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-500 overflow-hidden border border-slate-200 dark:border-violet-500/20">
                   <!-- Image Container -->
                   <div [class]="'relative bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-700 dark:to-slate-800 overflow-hidden ' + (i % 4 === 3 ? 'aspect-video' : 'aspect-[3/4]')">
-                    <img [src]="item.image" [alt]="languageService.getTranslation(item.title)"
-                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <img [ngSrc]="item.image" [alt]="languageService.getTranslation(item.title)"
+                         fill
+                         class="object-cover group-hover:scale-110 transition-transform duration-700" />
 
 
                   </div>
@@ -117,7 +120,7 @@ export class PortfolioComponent {
       title: { he: 'נוף עתידני', en: 'Futuristic Landscape' },
       category: { he: 'נופים', en: 'Landscapes' },
       description: { he: 'עיר עתידנית עם אדריכלות מתקדמת ותאורה דרמטית', en: 'Futuristic city with advanced architecture and dramatic lighting' },
-      image: '/assets/images/family info.png',
+      image: '/assets/images/family-info.png',
       tags: ['Sci-Fi', 'Architecture', 'Concept Art']
     },
     {
