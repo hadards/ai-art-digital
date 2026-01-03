@@ -22,6 +22,9 @@ export interface ServiceItem {
     en: string[];
   };
   featured?: boolean;
+  isBeta?: boolean;
+  isFree?: boolean;
+  externalUrl?: string;
   media?: {
     type: 'video' | 'image' | 'pdf';
     url: string;

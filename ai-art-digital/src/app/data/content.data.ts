@@ -89,6 +89,50 @@ export const SERVICES_DATA: ServiceItem[] = [
     ]
   },
   {
+    id: 'cv-landing-generator',
+    title: {
+      he: 'מחולל דף נחיתה מקורות חיים',
+      en: 'CV Landing Page Generator'
+    },
+    description: {
+      he: 'כלי AI חינמי וניסיוני - העלו קובץ קורות חיים וקבלו דף נחיתה מקצועי תוך שניות. ניסיון ללא עלות!',
+      en: 'Free experimental AI tool - upload your CV and get a professional landing page in seconds. Try it for free!'
+    },
+    priceRange: {
+      min: 0,
+      max: 0,
+      currency: 'FREE'
+    },
+    deliveryTime: {
+      he: 'מיידי',
+      en: 'Instant'
+    },
+    includes: {
+      he: [
+        'יצירה אוטומטית מקורות חיים',
+        'עיצוב מודרני ומקצועי',
+        'ללא צורך בהרשמה',
+        'כלי ניסיוני בטא',
+        'אפשרות להורדת קוד'
+      ],
+      en: [
+        'Automated CV processing',
+        'Modern professional design',
+        'No registration required',
+        'Experimental beta tool',
+        'Code download option'
+      ]
+    },
+    featured: true,
+    isBeta: true,
+    isFree: true,
+    externalUrl: 'https://cv-landing-generator.onrender.com/',
+    media: {
+      type: 'image',
+      url: '/assets/images/cv-landing.jpg'
+    }
+  },
+  {
     id: 'landing-page',
     title: {
       he: 'עמוד נחיתה מקצועי',
@@ -167,7 +211,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     gallery: [
       '/assets/images/IMG_8832.PNG',
       '/assets/images/family-info.png',
-      '/assets/images/IMG_5713.jpg'
+      '/assets/images/IMG_5713.jpg',
+      '/assets/images/comic2.jpg',
+      '/assets/images/comic3.jpg'
     ]
   },
   {
